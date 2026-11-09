@@ -1,0 +1,46 @@
+import { useEffect, useState } from 'react';
+import { Button } from '@astryxdesign/core/Button';
+import type { Hypothesis, Operator, BoardNode } from '../core/types.ts';
+import { OPERATORS, discover, makeHypotheses, material } from '../core/engine.ts';
+import { useWorkbench } from './context.tsx';
+import { Icon } from './Icons.tsx';
+function EditField({ label, value, onCommit, rows = 0 }: {
+    label: string;
+    value: string;
+    onCommit: (value: string) => void;
+    rows?: number;
+}) { const [draft, setDraft] = useState(value); useEffect(() => setDraft(value), [value]); return <div className="form-field"><label className="field-label">{label}</label>{rows ? <textarea maxLength={8000} aria-label={label} className="field-textarea" rows={rows} value={draft} onChange={e => setDraft(e.target.value)} onBlur={() => { if (draft !== value)
+    onCommit(draft); }}/> : <input maxLength={300} aria-label={label} className="field-input" value={draft} onChange={e => setDraft(e.target.value)} onBlur={() => { if (draft !== value)
+    onCommit(draft); }}/>}</div>; }
+function Inspector() {
+    const { store, state, board, catalog } = useWorkbench();
+    const n = board.nodes.find(n => n.id === state.selected[0]);
+    const edge = board.edges.find(e => e.id === state.selectedEdge);
+    if (edge)
+        return <><p className="inspector-kicker">関係を言葉にする</p><EditField label="接続の意味" value={edge.label} onCommit={value => store.patchEdge(edge.id, value)}/><button className="btn danger full" onClick={() => store.deleteSelected()}><Icon name="trash"/>接続を削除</button></>;
+    if (!n)
+        return <div className="lab-tip"><h3><Icon name="pointer"/>カードを選んでください</h3><p>仮説や付箋を選ぶと内容を編集できます。複数選択した素材は、まとめてラボへ送れます。</p></div>;
+    const patch = (p: Partial<BoardNode['data']>) => store.patchNode(n.id, p);
+    const h = n.data.hypothesis;
+    const mat = n.data.materialId ? material(catalog, n.data.materialId) : undefined;
+    return <><p className="inspector-kicker">{n.type === 'idea' ? 'WORKING HYPOTHESIS' : n.type === 'note' ? 'LAB NOTE' : n.type === 'frame' ? 'COMPARISON FRAME' : 'MATERIAL'}</p><EditField key={n.id + 'title'} label="タイトル" value={n.data.title} onCommit={title => patch({ title, ...(h ? { hypothesis: { ...h, title } } : {}) })}/>{n.type !== 'frame' && <EditField key={n.id + 'body'} label={n.type === 'idea' ? 'コアルール' : 'メモ'} value={n.data.body} rows={5} onCommit={body => patch({ body, ...(h ? { hypothesis: { ...h, rule: body } } : {}) })}/>}{mat && <><div className="metadata">{mat.kind === 'tag' ? `Steam tag #${mat.rank}` : `${mat.id} · ${mat.chapter}`}<br />{mat.clusters.map(c => catalog.clusters.find(x => x.id === c)?.label).join(' / ')}<br /><a href={mat.source} target="_blank" rel="noreferrer">出典を開く ↗</a></div><div className="mix-actions"><button className="btn small" onClick={() => store.toggleTray(mat.id)}><Icon name="flask"/>ラボへ追加 / 解除</button>{mat.kind === 'tag' && <button className="btn small" onClick={() => { store.ui({ baseId: mat.id }); store.setTray([...state.tray, mat.id]); }}>ベースにする</button>}</div></>}
+    {h && <><div className="form-field"><label className="field-label" htmlFor="idea-status">検討ステータス</label><select id="idea-status" className="field-select" value={n.data.status ?? 'seed'} onChange={e => patch({ status: e.target.value as BoardNode['data']['status'] })}><option value="seed">仮説の種</option><option value="testing">試作中</option><option value="promising">有望</option><option value="parked">保留</option></select></div>{([['example', 'プレイの一場面'], ['mvp', '最小の実験'], ['risk', '壊れそうなところ'], ['question', '検証する問い']] as const).map(([field, label]) => <EditField key={n.id + field} label={label} value={h[field]} rows={3} onCommit={value => patch({ hypothesis: { ...h, [field]: value } })}/>)}<div className="panel-divider"/><div className="field-label">自分の評価 <span className="hint">0 = 未評価 · 自動採点ではありません</span></div>{([['clarity', '伝わりやすさ'], ['novelty', '新しさ'], ['feasibility', '試作しやすさ']] as const).map(([field, label]) => <label key={field} className="rating-row">{label}<input type="range" aria-label={label} min="0" max="5" step="1" value={n.data.ratings?.[field] ?? 0} onChange={e => patch({ ratings: { clarity: 0, novelty: 0, feasibility: 0, ...n.data.ratings, [field]: Number(e.target.value) } })}/><span>{n.data.ratings?.[field] || '—'}</span></label>)}<div className="metadata">出発点: {h.origin}<br />評価は仮説であり、類似作品調査やユーザーテストの代わりにはなりません。</div></>}
+    <div className="panel-divider"/><div className="mix-actions"><button className="btn small" onClick={() => store.duplicateSelected()}><Icon name="copy"/>比較用に複製</button><button className="btn small danger" onClick={() => store.deleteSelected()}><Icon name="trash"/>削除</button></div></>;
+}
+export function Lab() {
+    const { store, state, catalog } = useWorkbench();
+    const [results, setResults] = useState<Hypothesis[]>([]);
+    const [recipeOpen, setRecipeOpen] = useState(false);
+    const tags = state.tray.filter(id => material(catalog, id)?.kind === 'tag'), mechs = state.tray.filter(id => material(catalog, id)?.kind === 'mechanic');
+    useEffect(() => setResults([]), [state.tray, state.operator, state.baseId]);
+    function react() { const next = makeHypotheses(catalog, state.tray, state.baseId, state.operator, state.variant); setResults(next); store.ui({ variant: state.variant + 1 }); }
+    return <aside className="lab" aria-label="リアクションラボ"><div className="lab-header"><button className="icon-btn drawer-close" aria-label="ラボパネルを閉じる" onClick={() => store.ui({ mobilePanel: 'none' })}><Icon name="x"/></button><h2><Icon name="flask"/>リアクションラボ</h2><p>組み合わせを、遊びに変える。</p></div><div className="panel-tabs"><button className={state.panel === 'lab' ? 'active' : ''} onClick={() => store.ui({ panel: 'lab' })}>組み合わせ</button><button className={state.panel === 'inspect' ? 'active' : ''} onClick={() => store.ui({ panel: 'inspect' })}>カードを編集</button></div><div className="lab-content">{state.panel === 'inspect' ? <Inspector /> : <>
+        <div className="form-field"><label className="field-label" htmlFor="base-select">01 / ベースとなる遊び</label><select id="base-select" className="field-select" value={state.baseId} onChange={e => { store.ui({ baseId: e.target.value }); store.setTray([...state.tray, e.target.value]); }}>{catalog.materials.filter(m => m.kind === 'tag').map(m => <option value={m.id} key={m.id}>{m.label}</option>)}</select></div>
+        <div className="form-field"><div className="field-label">02 / 混ぜる素材 <span className="hint">{state.tray.length} / 12</span></div><div className="mix-tray">{state.tray.map(id => { const m = material(catalog, id)!; return <span className={`mix-token ${m.kind}`} key={id}><span>{m.label}</span><button aria-label={`${m.label}をラボから外す`} onClick={() => store.toggleTray(id)}><Icon name="x"/></button></span>; })}{!state.tray.length && <span className="tray-placeholder">左の素材名をクリックするか、<br />ボードで選んだ素材を追加。</span>}</div><div className="mix-actions"><button className="btn small subtle" onClick={() => { store.setTray([...state.tray, ...discover(catalog, state.tray, state.baseId, state.variant)]); store.ui({ variant: state.variant + 1 }); }}><Icon name="shuffle"/>異分野を混ぜる</button><button className="btn small subtle" onClick={() => store.setTray([])}>クリア</button></div></div>
+        <div className="field-label">03 / 化学反応の起こし方</div><div className="operator-list">{OPERATORS.map(o => <button key={o.id} className={`operator ${state.operator === o.id ? 'active' : ''}`} aria-pressed={state.operator === o.id} onClick={() => store.ui({ operator: o.id })} title={o.description}>{o.label}</button>)}</div><p className="operator-description">{OPERATORS.find(o => o.id === state.operator)?.description}</p>
+        <Button label={results.length ? '別の角度でもう一度' : '反応を試す'} variant="primary" className="reaction-button" isDisabled={!tags.length || !mechs.length} onClick={react}/><p className="method-note">タグとメカニクスを1つ以上選択<br />ローカルのルールベース発想補助 · AI API不要</p>
+        {results.map((h, i) => <article className="hypothesis-card" key={`${state.variant}-${i}`}><div className="section-eyebrow">REACTION {String(i + 1).padStart(2, '0')}</div><h3>{h.title}</h3><p>{h.rule}</p><details><summary>プレイ例・試作・懸念を見る</summary><p>{h.example}</p><strong>最小の実験</strong><p>{h.mvp}</p><strong>壊れそうなところ</strong><p>{h.risk}</p><strong>検証する問い</strong><p>{h.question}</p><small>{h.origin}</small></details><button className="btn small full" onClick={() => store.addIdea(h)}><Icon name="plus"/>仮説としてボードに残す</button></article>)}
+        {!results.length && <div className="lab-tip"><h3><Icon name="spark"/>足し算から、一歩先へ。</h3><p>「ジャンプしながら経営する」ではなく、<br />「ジャンプすることが投資になる」。<br />ひとつの行動に、ふたつの意味を。</p></div>}
+        <div className="panel-divider"/><div className="mix-actions"><button className="btn small" onClick={() => store.saveRecipe()} disabled={!state.tray.length}><Icon name="save"/>組み合わせを保存</button><button className="btn small subtle" onClick={() => setRecipeOpen(!recipeOpen)}>保存済み {state.workspace.recipes.length}</button></div>{recipeOpen && state.workspace.recipes.map(r => <button className="recipe-row" key={r.id} onClick={() => store.restoreRecipe(r.id)}>{r.title}</button>)}<p className="method-note">既存の500融合例は精密プラットフォーマー向け。<br />他のベースでは一般化した発想用の問いを使います。</p>
+        </>}</div></aside>;
+}

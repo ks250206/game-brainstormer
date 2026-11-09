@@ -1,0 +1,71 @@
+{
+  "environment": "Chromium / actual portable HTML injected with Playwright set_content; browser navigation restricted; native localStorage unavailable",
+  "tests": [
+    {
+      "name": "initial board, all ten semantic clusters and connections render",
+      "passed": true
+    },
+    {
+      "name": "single HTML renders without any network requests",
+      "passed": true
+    },
+    {
+      "name": "all 429 tags, Japanese search and NFKC full-width search",
+      "passed": true
+    },
+    {
+      "name": "all 203 mechanics, chapter filtering and adding a card",
+      "passed": true
+    },
+    {
+      "name": "toolbar undo and redo",
+      "passed": true
+    },
+    {
+      "name": "rule-based reactions generate editable hypotheses with MVP and risk",
+      "passed": true
+    },
+    {
+      "name": "editable title and risk; injected markup remains plain text",
+      "passed": true
+    },
+    {
+      "name": "keyboard editing is isolated from board shortcuts",
+      "passed": true
+    },
+    {
+      "name": "connect tool links two cards",
+      "passed": true
+    },
+    {
+      "name": "dragging cards and undoing the gesture",
+      "passed": true
+    },
+    {
+      "name": "sticky notes, duplicate and delete",
+      "passed": true
+    },
+    {
+      "name": "JSON export and additive import round-trip",
+      "passed": true
+    },
+    {
+      "name": "invalid JSON import preserves existing boards",
+      "passed": true
+    },
+    {
+      "name": "accessible native help dialog opens and closes",
+      "passed": true
+    },
+    {
+      "name": "no browser JavaScript exceptions",
+      "passed": true
+    },
+    {
+      "name": "390px mobile: material drawer, lab drawer, no horizontal overflow",
+      "passed": true
+    }
+  ],
+  "count": 16,
+  "allPassed": true
+}

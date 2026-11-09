@@ -1,0 +1,430 @@
+﻿rank,tag,type,fusion_feasibility,in_500_pairs,in_45_concepts,recommended_mechanic_id,best_concept,note,source_url
+1,Indie,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+2,Action,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+3,Adventure,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+4,Casual,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+5,Singleplayer,プレイ人数・形式,1,1,0,STR-04,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+6,Simulation,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+7,RPG,ジャンル・サブジャンル,2,1,0,ACT-16,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+8,Strategy,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+9,2D,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+10,3D,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+11,Early Access,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+12,Free to Play,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+13,Atmospheric,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+14,Story Rich,題材・雰囲気・世界観,2,1,0,STR-08,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+15,Colorful,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+16,Exploration,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+17,Fantasy,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+18,Multiplayer,プレイ人数・形式,5,3,1,RES-08,足場を取引する,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+19,Cute,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+20,Pixel Graphics,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+21,First-Person,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+22,Combat,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+23,Puzzle,ジャンル・サブジャンル,4,2,0,RES-09,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+24,Stylized,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+25,Relaxing,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+26,Action-Adventure,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+27,Funny,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+28,Arcade,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+29,Controller,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+30,PvE,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+31,Anime,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+32,Horror,操作・ルール・活動,5,3,1,ARC-08,見られない床,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+33,Co-op,プレイ人数・形式,5,12,2,ACT-06,見えているのは片方だけ,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+34,Sci-fi,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+35,Sports,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+36,Choices Matter,題材・雰囲気・世界観,2,1,0,ACT-18,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+37,Third Person,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+38,Top-Down,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+39,Massively Multiplayer,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+40,Retro,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+41,Family Friendly,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+42,Violent,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+43,Shooter,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+44,Female Protagonist,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+45,PvP,プレイ人数・形式,5,10,3,ARC-05,弾幕の取り引き,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+46,Dark,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+47,Sexual Content,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+48,Realistic,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+49,Online Co-Op,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+50,Mystery,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+51,Multiple Endings,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+52,Racing,操作・ルール・活動,5,7,1,AUC-14,配送ルートの競り,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+53,Character Customization,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+54,Linear,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+55,Survival,操作・ルール・活動,5,3,1,ECO-20,残り一本の橋,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+56,Open World,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+57,Physics,操作・ルール・活動,5,19,7,ACT-21,種をまく着地,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+58,Comedy,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+59,Nudity,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+60,Cartoony,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+61,Visual Novel,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+62,Psychological Horror,操作・ルール・活動,5,3,1,RES-17,見つからない衝突判定,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+63,Roguelike,ジャンル・サブジャンル,5,4,1,MOV-17,地図が消えるタイムアタック,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+64,Gore,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+65,Platformer,ジャンル・サブジャンル,5,3,1,ECO-06,着地が配当を生む,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+66,Magic,操作・ルール・活動,5,3,1,CAR-08,魔法を使うと次周に請求,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+67,Roguelite,ジャンル・サブジャンル,5,11,1,CAR-08,魔法を使うと次周に請求,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+68,Resource Management,操作・ルール・活動,5,12,3,ARC-07,ジャンプの借金,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+69,Management,操作・ルール・活動,5,3,1,ECO-20,マンカラ貨物港,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+70,2D Platformer,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+71,Sandbox,操作・ルール・活動,5,6,2,ECO-20,前周の軌跡が配線になる,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+72,Tactical,操作・ルール・活動,5,8,2,ARC-08,音を消す忍者,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+73,Old School,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+74,Medieval,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+75,Hand-drawn,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+76,FPS,ジャンル・サブジャンル,5,3,1,ACT-06,ターン制の弾幕走者,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+77,Minimalist,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+78,Immersive Sim,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+79,Action RPG,ジャンル・サブジャンル,4,2,0,RES-03,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+80,Turn-Based Combat,題材・雰囲気・世界観,2,1,0,TRN-02,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+81,Crafting,操作・ルール・活動,5,4,1,ECO-20,残り一本の橋,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+82,Building,操作・ルール・活動,5,6,2,ACT-06,工場が自分をコピーする,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+83,Turn-Based Strategy,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+84,Futuristic,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+85,Point & Click,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+86,Dark Fantasy,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+87,Emotional,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+88,Procedural Generation,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+89,Action Roguelike,ジャンル・サブジャンル,5,3,1,ACT-10,四つの技の輪,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+90,Cartoon,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+91,Space,操作・ルール・活動,5,3,1,ARC-05,小惑星を踏み渡る,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+92,Difficult,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+93,3D Platformer,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+94,Interactive Fiction,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+95,Nature,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+96,Romance,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+97,Logic,操作・ルール・活動,5,4,1,ARC-08,見られない床,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+98,Choose Your Own Adventure,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+99,Turn-Based Tactics,操作・ルール・活動,5,5,1,MOV-03,着地でチェスする,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+100,Survival Horror,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+101,Incremental,操作・ルール・活動,5,5,2,MOV-18,種をまく着地,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+102,Utilities,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+103,Local Multiplayer,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+104,Base Building,操作・ルール・活動,5,3,1,ECO-20,残り一本の橋,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+105,1990's,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+106,Hentai,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+107,Surreal,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+108,Hack and Slash,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+109,Hidden Object,操作・ルール・活動,5,3,1,RES-17,見つからない衝突判定,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+110,Dating Sim,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+111,Bullet Hell,操作・ルール・活動,5,6,2,ARC-05,弾幕の取り引き,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+112,Post-apocalyptic,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+113,Economy,操作・ルール・活動,5,13,3,ECO-07,ジャンプの借金,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+114,Lore-Rich,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+115,VR,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+116,Strategy RPG,ジャンル・サブジャンル,4,1,0,RES-04,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+117,Side Scroller,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+118,Dungeon Crawler,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+119,Life Sim,ジャンル・サブジャンル,5,3,1,MOV-21,生きたステージの飼育,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+120,Inventory Management,操作・ルール・活動,5,3,1,ECO-15,盗品は重い,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+121,Score Attack,操作・ルール・活動,5,11,3,ACT-06,着地の奏者,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+122,Walking Simulator,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+123,Card Game,ジャンル・サブジャンル,5,7,2,ACT-10,四つの技の輪,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+124,Education,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+125,Puzzle Platformer,ジャンル・サブジャンル,5,10,3,ACT-21,前周の軌跡が配線になる,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+126,Tabletop,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+127,Idler,操作・ルール・活動,5,3,1,ECO-06,着地が配当を生む,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+128,Cinematic,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+129,Dialogue Heavy,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+130,Text-Based,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+131,War,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+132,Psychological,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+133,Shoot 'Em Up,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+134,Stealth,操作・ルール・活動,5,3,1,ARC-08,音を消す忍者,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+135,Zombies,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+136,JRPG,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+137,LGBTQ+,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+138,Investigation,操作・ルール・活動,5,6,2,STR-09,見つからない衝突判定,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+139,Design & Illustration,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+140,Local Co-Op,プレイ人数・形式,5,3,1,ARC-06,VR側はステージの巨人,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+141,1980s,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+142,Historical,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+143,2.5D,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+144,Supernatural,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+145,Thriller,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+146,Great Soundtrack,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+147,Party-Based RPG,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+148,Deckbuilding,操作・ルール・活動,5,6,1,RES-20,撃つ弾が譜面になる,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+149,Time Management,操作・ルール・活動,5,3,1,MOV-16,列車が作る階段,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+150,Tutorial,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+151,Isometric,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+152,Dark Humor,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+153,Artificial Intelligence,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+154,Cozy,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+155,Nonlinear,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+156,Replay Value,販売・メタ情報,5,3,1,MOV-22,前周の軌跡が配線になる,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+157,Loot,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+158,Military,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+159,Team-Based,プレイ人数・形式,1,2,0,STR-03,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+160,Top-Down Shooter,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+161,Turn-Based,操作・ルール・活動,5,5,1,ACT-06,ターン制の弾幕走者,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+162,Third-Person Shooter,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+163,Demons,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+164,Collectathon,題材・雰囲気・世界観,2,2,0,ACT-19,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+165,Aliens,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+166,Tactical RPG,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+167,Cyberpunk,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+168,Detective,操作・ルール・活動,5,6,2,ARC-08,見られない床,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+169,Robots,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+170,Modern,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+171,Software,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+172,Tower Defense,ジャンル・サブジャンル,5,3,1,ARC-07,防衛タワーの配達員,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+173,Real Time Tactics,操作・ルール・活動,5,3,1,ARC-07,防衛タワーの配達員,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+174,Dystopian,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+175,Perma Death,操作・ルール・活動,5,3,1,MOV-17,地図が消えるタイムアタック,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+176,Abstract,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+177,Automation,操作・ルール・活動,5,8,3,ACT-06,工場が自分をコピーする,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+178,Driving,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+179,Board Game,ジャンル・サブジャンル,5,4,1,MOV-02,ダイスが床を組み替える,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+180,Card Battler,ジャンル・サブジャンル,4,3,0,CAR-02,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+181,RTS,ジャンル・サブジャンル,5,5,1,MOV-15,ゴースト軍団の命令,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+182,CRPG,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+183,Arena Shooter,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+184,Precision Platformer,操作・ルール・活動,5,6,2,ACT-10,四つの技の輪,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+185,Comic Book,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+186,Souls-like,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+187,City Builder,ジャンル・サブジャンル,5,5,2,VIC-14,屋上を所有する,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+188,Psychedelic,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+189,Capitalism,操作・ルール・活動,5,3,1,AUC-14,完璧着地の株式市場,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+190,Cats,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+191,Co-op Campaign,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+192,Mythology,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+193,Wargame,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+194,Memes,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+195,Alternate History,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+196,Creature Collector,操作・ルール・活動,5,5,2,MOV-21,生きたステージの飼育,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+197,4 Player Local,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+198,Grid-Based Movement,操作・ルール・活動,4,2,0,RES-26,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+199,Game Development,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+200,Dragons,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+201,Destruction,操作・ルール・活動,5,3,1,ECO-20,削った床で加速する,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+202,Crime,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+203,Level Editor,操作・ルール・活動,5,7,2,ARC-06,VR側はステージの巨人,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+204,Fast-Paced,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+205,Party Game,プレイ人数・形式,5,7,1,ARC-05,重力を壊したのは誰,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+206,Class-Based,題材・雰囲気・世界観,2,1,0,ACT-12,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+207,Short,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+208,Moddable,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+209,Parkour,操作・ルール・活動,5,8,3,MOV-09,釣り糸で都市を飛ぶ,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+210,Flight,操作・ルール・活動,5,3,1,ARC-05,小惑星を踏み渡る,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+211,Beat 'em up,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+212,Animation & Modeling,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+213,Metroidvania,ジャンル・サブジャンル,4,3,0,ACT-15,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+214,Trading,操作・ルール・活動,5,10,2,AUC-14,配送ルートの競り,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+215,Music,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+216,Auto Battler,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+217,Philosophical,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+218,Dark Comedy,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+219,Runner,操作・ルール・活動,5,3,1,ECO-20,削った床で加速する,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+220,Cooking,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+221,Farming Sim,ジャンル・サブジャンル,5,7,2,MOV-18,種をまく着地,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+222,2D Fighter,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+223,Automobile Sim,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+224,Rhythm,操作・ルール・活動,5,8,3,ACT-06,着地の奏者,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+225,Gun Customization,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+226,Competitive,プレイ人数・形式,5,10,1,AUC-14,配送ルートの競り,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+227,3D Fighter,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+228,Soundtrack,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+229,Wholesome,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+230,Swordplay,操作・ルール・活動,5,3,1,RES-20,剣戟のジャンプ間合い,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+231,Vehicular Combat,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+232,eSports,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+233,Fighting,ジャンル・サブジャンル,5,4,1,RES-20,剣戟のジャンプ間合い,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+234,MMORPG,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+235,Conspiracy,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+236,Noir,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+237,Science,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+238,Quick-Time Events,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+239,Colony Sim,ジャンル・サブジャンル,5,4,1,MOV-21,生きたステージの飼育,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+240,Lovecraftian,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+241,Word Game,操作・ルール・活動,5,3,1,CAR-08,スペルを跳びながら書く,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+242,Narrative,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+243,Twin Stick Shooter,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+244,Mining,操作・ルール・活動,5,3,1,MOV-18,地下の送電採掘,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+245,Satire,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+246,Space Sim,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+247,Gothic,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+248,Grand Strategy,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+249,Parody,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+250,Underground,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+251,Dynamic Narration,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+252,Roguelike Deckbuilder,ジャンル・サブジャンル,4,1,0,CAR-06,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+253,Looter Shooter,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+254,Video Production,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+255,Shop Keeper,ジャンル・サブジャンル,5,7,1,ARC-04,店舗の屋根が伸びる,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+256,Experimental,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+257,Agriculture,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+258,Audio Production,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+259,Fishing,操作・ルール・活動,5,3,1,MOV-09,釣り糸で都市を飛ぶ,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+260,Split Screen,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+261,Battle Royale,題材・雰囲気・世界観,2,1,0,VIC-08,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+262,Mystery Dungeon,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+263,6DOF,視点・演出・表現,5,3,1,ARC-05,小惑星を踏み渡る,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+264,Classic,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+265,Gambling,操作・ルール・活動,4,2,0,AUC-17,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+266,Bullet Time,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+267,World War II,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+268,Time Manipulation,操作・ルール・活動,5,6,2,ACT-06,犯人は前周の自分,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+269,Immersive,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+270,Martial Arts,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+271,Animals,操作・ルール・活動,5,5,2,ARC-06,群れを足場にする,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+272,Asynchronous Multiplayer,プレイ人数・形式,5,3,2,STR-02,見えているのは片方だけ,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+273,Spectacle fighter,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+274,Transportation,操作・ルール・活動,5,6,2,ECO-20,マンカラ貨物港,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+275,Mechs,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+276,Voxel,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+277,Dogs,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+278,Combat Racing,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+279,Match 3,題材・雰囲気・世界観,2,1,0,ACT-22,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+280,Job Simulator,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+281,Action RTS,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+282,Hero Shooter,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+283,Beautiful,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+284,FMV,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+285,Trading Card Game,操作・ルール・活動,4,1,0,CAR-03,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+286,Open World Survival Craft,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+287,Time Travel,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+288,Vampires,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+289,Ninja,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+290,God Game,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+291,Bullet Heaven,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+292,Solitaire,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+293,Underwater,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+294,Pirates,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+295,Steampunk,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+296,Otome,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+297,Hex Grid,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+298,Political Sim,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+299,Boomer Shooter,ジャンル・サブジャンル,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+300,Hacking,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+301,Hunting,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+302,Software Training,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+303,Trains,操作・ルール・活動,5,3,1,MOV-16,列車が作る階段,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+304,Typing,操作・ルール・活動,5,3,1,CAR-08,スペルを跳びながら書く,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+305,Faith,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+306,Tanks,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+307,Party,プレイ人数・形式,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+308,Programming,操作・ルール・活動,5,4,2,ACT-06,工場が自分をコピーする,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+309,4X,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+310,MOBA,ジャンル・サブジャンル,4,3,0,ARC-02,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+311,Sokoban,操作・ルール・活動,5,3,1,ACT-21,箱を押した反力で飛ぶ,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+312,Diplomacy,題材・雰囲気・世界観,2,2,0,ECO-19,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+313,Assassins,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+314,Minigames,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+315,Remake,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+316,Superhero,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+317,Western,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+318,Photo Editing,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+319,Dinosaurs,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+320,Heist,操作・ルール・活動,5,3,1,ECO-15,盗品は重い,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+321,Traditional Roguelike,ジャンル・サブジャンル,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+322,Mouse Only,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+323,Naval,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+324,Character Action Game,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+325,Snow,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+326,Cold War,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+327,Transhumanism,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+328,Escape Room,操作・ルール・活動,4,1,0,VIC-11,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+329,Sailing,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+330,Naval Combat,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+331,Music-Based Procedural Generation,操作・ルール・活動,5,3,1,ACT-06,着地の奏者,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+332,Nostalgia,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+333,Archery,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+334,Farming,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+335,Desktop Companion,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+336,Horses,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+337,Addictive,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+338,Organizing,操作・ルール・活動,5,1,1,VIC-21,一筆書きの掃除屋,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+339,Real-Time,操作・ルール・活動,4,0,0,,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+340,Football (Soccer),題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+341,Trivia,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+342,Episodic,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+343,Werewolves,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+344,Offroad,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+345,Time Attack,操作・ルール・活動,5,11,3,ECO-07,ジャンプの借金,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+346,Villain Protagonist,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+347,Real-Time with Pause,操作・ルール・活動,4,1,0,TRN-08,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+348,Epic,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+349,Sniper,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+350,On-Rails Shooter,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+351,Spelling,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+352,Cleaning,操作・ルール・活動,5,3,1,SET-03,一筆書きの掃除屋,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+353,Spaceships,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+354,Jump Scare,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+355,Decorating,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+356,Sequel,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+357,Dwarves,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+358,Outbreak Sim,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+359,Dice,操作・ルール・活動,5,8,1,MOV-02,ダイスが床を組み替える,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+360,Chess,操作・ルール・活動,5,4,1,MOV-03,着地でチェスする,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+361,World War I,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+362,Mars,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+363,Boxing,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+364,Extraction Shooter,操作・ルール・活動,5,3,1,ECO-15,盗品は重い,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+365,Social Deduction,操作・ルール・活動,5,6,1,ARC-05,重力を壊したのは誰,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+366,Medical Sim,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+367,Mod,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+368,Basketball,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+369,Golf,操作・ルール・活動,5,0,1,,ピンボール・パルクール,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+370,Submarine,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+371,Touch-Friendly,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+372,Boss Rush,操作・ルール・活動,5,1,1,VIC-16,剣戟のジャンプ間合い,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+373,Motorbike,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+374,Pinball,操作・ルール・活動,5,3,1,MOV-09,ピンボール・パルクール,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+375,Gaming,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+376,Baseball,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+377,Elves,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+378,Rome,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+379,360 Video,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+380,Bikes,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+381,Hobby Sim,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+382,Electronic Music,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+383,Asymmetric VR,視点・演出・表現,5,3,1,ARC-06,VR側はステージの巨人,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+384,Xianxia,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+385,Wrestling,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+386,Wuxia,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+387,Cult,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+388,Skateboarding,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+389,Vikings,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+390,Instrumental Music,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+391,Billiards,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+392,Silent Protagonist,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+393,Football (American),題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+394,Mini Golf,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+395,Poker,操作・ルール・活動,4,1,0,AUC-04,,操作・ルールに直接転換できる,https://store.steampowered.com/tag/browse/en/
+396,Espionage,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+397,Skating,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+398,Falling Blocks,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+399,Birds,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+400,Rock Music,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+401,Cycling,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+402,Samurai,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+403,Mahjong,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+404,Tennis,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+405,Foxes,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+406,Intentionally Awkward Controls,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+407,Motocross,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+408,TrackIR,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+409,Hardware,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+410,Hockey,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+411,Language Learning,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+412,Bowling,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+413,Voice Control,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+414,Skiing,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+415,Snowboarding,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+416,Based On A Novel,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+417,ATV,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+418,8-bit Music,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+419,Lemmings,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+420,Wolves,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+421,BMX,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+422,Musou,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+423,Benchmark,視点・演出・表現,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+424,Capybaras,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+425,Zoo,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+426,Volleyball,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+427,Cricket,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+428,Rugby,題材・雰囲気・世界観,2,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
+429,Reboot,販売・メタ情報,1,0,0,,,独立したルールではなく、主に演出・対象層／題材として検討,https://store.steampowered.com/tag/browse/en/
