@@ -29,15 +29,38 @@ the portable renderer uses the same subscription API.
 The second renderer is an explicit fallback, not a claim that the requested stack
 was installed or its browser tests executed.
 
-## Semantic catalog
+## Design catalog
 
-Every tag receives one explicit primary category and optional secondary facets.
+Eleven clusters, each answering one design question (verbs, decisions, puzzles, systems,
+progression, structure, feeling, players, setting, presentation, format). Every tag
+receives one explicit primary category and subgroup, plus optional secondary facets.
 Materials retain original IDs and rank. Mechanics retain the original chapter and
 also participate in semantic clusters. Search is Unicode-normalized lexical AND
 search across labels, aliases, IDs and category names, not vector similarity.
 
 The taxonomy is encoded in `scripts/prepare-data.py`. Generation validates unique
 coverage of all 429 tags and emits the same JSON to `src/data` and `public`.
+Editorial notes in `data/editorial/*.psv` add a summary, illustrative works and Caillois
+weights (`play`: agon/alea/mimicry/ilinx, 0-3) to every material; generation fails if any
+tag or mechanic is missing or malformed.
+
+## Caillois play map
+
+`src/core/caillois.ts` is pure TypeScript. It maps weights to two axes
+(x: will/control → surrender, y: make-believe/sensation → rules), derives card positions
+(materials from the catalog, hypotheses from the sum of their materials), computes the
+board's share per category, centroid and gaps (<12%), and returns deterministic
+suggestions. The React `PlayMap` component only renders and edits; overlapping points are
+spread for display without changing data. Idea and note cards may store an optional
+pinned `data.play` point; it is additive to schemaVersion 1, validated to [-1, 1] on
+import and rejected on material/frame cards.
+
+## Theme
+
+Every literal colour in `src/styles.css` is a `light-dark(light, dark)` pair. Astryx
+`Theme mode` syncs `<html data-theme>` (light | dark, absent = system); an inline script
+in `index.html` applies a stored choice before first paint. React Flow receives the same
+`colorMode`. The preference is a renderer setting in localStorage, not workspace data.
 
 ## Reactions
 

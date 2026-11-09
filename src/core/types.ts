@@ -2,12 +2,22 @@ export type MaterialKind = 'tag' | 'mechanic';
 export type NodeKind = 'material' | 'idea' | 'note' | 'frame';
 export type Operator = 'translate' | 'constraint' | 'invert' | 'delay' | 'social';
 export type Status = 'seed' | 'testing' | 'promising' | 'parked';
+export type PlayType = 'agon' | 'alea' | 'mimicry' | 'ilinx';
+export type PlayWeights = Record<PlayType, number>;
+/** A point on the Caillois map. x: -1 will/control … +1 surrender; y: -1 make-believe/sensation … +1 rules. */
+export interface PlayPoint {
+    x: number;
+    y: number;
+}
 export interface Cluster {
     id: string;
     label: string;
     en: string;
     icon: string;
     color: string;
+    /** The design question this cluster answers. */
+    question: string;
+    description: string;
     subgroups: {
         id: string;
         label: string;
@@ -22,6 +32,12 @@ export interface Material {
     clusters: string[];
     subgroup: string;
     description: string;
+    /** Original editorial explanation shown in help popovers. */
+    summary: string;
+    /** Illustrative representative works chosen by the editor (may be empty). */
+    examples: string[];
+    /** Editorial Caillois weights, 0-3 each. */
+    play: PlayWeights;
     rank?: number;
     chapter?: string;
     chapterCode?: string;
@@ -91,6 +107,8 @@ export interface BoardNode {
         tone: string;
         status?: Status;
         hypothesis?: Hypothesis;
+        /** Manually pinned position on the Caillois play map (idea/note cards). */
+        play?: PlayPoint;
         ratings?: {
             clarity: number;
             novelty: number;
@@ -144,7 +162,7 @@ export interface UIState {
     query: string;
     chapter: string;
     tool: 'select' | 'pan' | 'connect';
-    panel: 'lab' | 'inspect';
+    panel: 'lab' | 'inspect' | 'play';
     mobilePanel: 'none' | 'library' | 'lab';
     toast: string;
     canUndo: boolean;

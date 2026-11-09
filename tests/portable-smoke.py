@@ -23,8 +23,8 @@ with sync_playwright() as p:
     page.set_content(HTML,wait_until='load')
     assert page.locator('[data-node]').count()==6
     assert page.locator('[data-edge].wire').count()==4
-    assert page.locator('.cluster-tile').count()==11
-    passed('initial board, all ten semantic clusters and connections render')
+    assert page.locator('.cluster-tile').count()==12
+    passed('initial board, all eleven design clusters and connections render')
     page.wait_for_timeout(5200)
     page.screenshot(path=ROOT/'docs/images/workspace.png')
     page.locator('.ribbon').screenshot(path=ROOT/'docs/images/semantic-ribbon.png')

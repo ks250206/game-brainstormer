@@ -1,4 +1,4 @@
-import type { Board, BoardNode, Catalog, Hypothesis, Position, UIState, Viewport, Workspace } from './types.ts';
+import type { Board, BoardNode, Catalog, Hypothesis, PlayPoint, Position, UIState, Viewport, Workspace } from './types.ts';
 import { uid, clone, initialWorkspace, blankBoard, makeMaterialNode, makeIdeaNode, material, bounds, parseWorkspace, STORAGE_KEY } from './engine.ts';
 export class WorkbenchStore {
     private state: UIState;
@@ -7,7 +7,7 @@ export class WorkbenchStore {
     private future: Workspace[] = [];
     private gesture: Workspace | null = null;
     readonly catalog: Catalog;
-    constructor(catalog: Catalog) { this.catalog = catalog; const workspace = initialWorkspace(catalog); const ids = workspace.boards[0]!.nodes.flatMap(n => n.data.materialId ? [n.data.materialId] : []); this.state = { workspace, selected: [], selectedEdge: null, tray: ids, baseId: ids[0]!, operator: 'translate', variant: 0, tab: 'tag', cluster: 'movement', query: '', chapter: '', tool: 'select', panel: 'lab', mobilePanel: 'none', toast: '', canUndo: false, canRedo: false }; }
+    constructor(catalog: Catalog) { this.catalog = catalog; const workspace = initialWorkspace(catalog); const ids = workspace.boards[0]!.nodes.flatMap(n => n.data.materialId ? [n.data.materialId] : []); this.state = { workspace, selected: [], selectedEdge: null, tray: ids, baseId: ids[0]!, operator: 'translate', variant: 0, tab: 'tag', cluster: 'action', query: '', chapter: '', tool: 'select', panel: 'lab', mobilePanel: 'none', toast: '', canUndo: false, canRedo: false }; }
     getSnapshot = (): UIState => this.state;
     subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
     private emit() { this.state = { ...this.state, canUndo: this.past.length > 0, canRedo: this.future.length > 0 }; for (const l of this.listeners)
@@ -37,6 +37,13 @@ export class WorkbenchStore {
     addConcept(id: string) { const c = this.catalog.concepts.find(x => x.id === id); if (!c)
         return; const bb = bounds(this.board().nodes); const baseId = this.catalog.materials.find(m => m.label === 'Precision Platformer')!.id; const hs: Hypothesis = { ...c, operator: 'translate', origin: '既存のブレスト例（精密プラットフォーマー向け）', baseId, question: c.novelty }; const x = bb.x + bb.width + 110, y = bb.y; const ns = c.materials.map((mid, i) => makeMaterialNode(this.catalog, mid, { x: x + Math.floor(i / 3) * 275, y: y + (i % 3) * 170 })); const idea = makeIdeaNode(hs, { x: x + Math.ceil(ns.length / 3) * 275 + 30, y: y + 80 }); this.updateBoard(b => ({ ...b, nodes: [...b.nodes, ...ns, idea], edges: [...b.edges, ...ns.map(s => ({ id: uid('edge'), source: s.id, target: idea.id, label: '融合する' }))] })); this.ui({ selected: [idea.id], panel: 'inspect', selectedEdge: null, toast: '先行ブレストを展開しました' }); }
     patchNode(id: string, patch: Partial<BoardNode['data']>) { this.updateBoard(b => ({ ...b, nodes: b.nodes.map(n => n.id === id ? { ...n, data: { ...n.data, ...patch } } : n) })); }
+    /** Pin an idea/note card on the Caillois map, or pass null to return to the derived position. */
+    pinPlay(id: string, point: PlayPoint | null) { const n = this.board().nodes.find(x => x.id === id); if (!n || (n.type !== 'idea' && n.type !== 'note'))
+        return; this.updateBoard(b => ({ ...b, nodes: b.nodes.map(x => { if (x.id !== id)
+            return x; const data = { ...x.data }; if (point)
+            data.play = { x: Math.max(-1, Math.min(1, point.x)), y: Math.max(-1, Math.min(1, point.y)) };
+        else
+            delete data.play; return { ...x, data }; }) })); }
     moveNodes(positions: Record<string, Position>) { this.updateBoard(b => ({ ...b, nodes: b.nodes.map(n => positions[n.id] ? { ...n, position: positions[n.id]! } : n) }), false); }
     setViewport(viewport: Viewport) { this.updateBoard(b => ({ ...b, viewport }), false); }
     select(id: string, add = false) { const prev = this.state.selected; this.ui({ selected: add ? (prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]) : [id], selectedEdge: null }); }

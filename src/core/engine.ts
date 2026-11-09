@@ -52,7 +52,7 @@ export function initialWorkspace(c: Catalog): Workspace {
     return { schemaVersion: 1, activeBoardId: board.id, boards: [board], favorites: [a.data.materialId!, b.data.materialId!, 'MOV-10', 'ECO-07', 'MOV-12'], recipes: [] };
 }
 export function makeIdeaNode(h: Hypothesis, position: Position): BoardNode { return { id: uid('idea'), type: 'idea', position, width: 310, height: 310, data: { title: h.title, body: h.rule, tone: 'peach', status: 'seed', hypothesis: clone(h), ratings: { clarity: 0, novelty: 0, feasibility: 0 } } }; }
-const verbs: Record<string, string> = { movement: '移動して目標に到達する', combat: '相手の行動を読み、攻撃する', thinking: '情報を集めて仮説を確かめる', systems: '設備を組み、資源を運用する', progress: '獲得した能力を組み替える', social: '他のプレイヤーと役割を調整する', world: '世界を探索し、発見する', feeling: '物語の選択をする', aesthetic: '空間の見え方を切り替える', format: '短い課題に繰り返し挑む' };
+const verbs: Record<string, string> = { action: '跳ぶ・撃つ・操縦するなど、瞬間の操作をする', strategy: '配置と順序を計画し、相手を読む', puzzle: '情報を集めて仮説を確かめる', systems: '設備を組み、資源を運用する', progress: '獲得した能力や装備を組み替える', structure: '区間や周回をひとつ攻略する', story: '物語の選択をする', social: '他のプレイヤーと役割を調整する', world: '世界を探索し、発見する', presentation: '空間の見え方を切り替える', format: '短い課題に繰り返し挑む' };
 const mechanisms: Record<string, {
     action: string;
     cost: string;
@@ -96,7 +96,7 @@ export function makeHypotheses(c: Catalog, ids: string[], baseId: string, operat
         return [];
     const main = mechanics[Math.abs(variant) % mechanics.length]!;
     const system = mechanisms[main.chapterCode ?? 'ACT']!;
-    const verb = verbs[base.primaryCluster] ?? verbs.thinking!;
+    const verb = verbs[base.primaryCluster] ?? verbs.puzzle!;
     const others = tags.filter(t => t.id !== base.id).map(t => t.label);
     const qualifiers = others.length ? `体験の条件は「${others.join(' × ')}」。` : '';
     const extra = mechanics.filter(m => m.id !== main.id).map(m => m.label);
@@ -132,7 +132,7 @@ export function discover(c: Catalog, excluded: string[], baseId: string, seed = 
     const base = material(c, baseId);
     const eligible = c.materials.filter(m => !excluded.includes(m.id) && m.id !== baseId);
     const distant = eligible.filter(m => !base || m.primaryCluster !== base.primaryCluster);
-    const tagPool = distant.filter(m => m.kind === 'tag' && !['format', 'aesthetic'].includes(m.primaryCluster));
+    const tagPool = distant.filter(m => m.kind === 'tag' && !['format', 'presentation'].includes(m.primaryCluster));
     const mechPool = distant.filter(m => m.kind === 'mechanic');
     const pick = (arr: Material[], salt: number) => arr.length ? arr[((Math.abs(seed) + 1) * 37 + salt * 17) % arr.length]!.id : '';
     return [pick(tagPool, 1), pick(mechPool, 2)].filter(Boolean);
@@ -232,6 +232,12 @@ export function parseWorkspace(json: string, c: Catalog): Workspace {
                 if (!record(d.ratings))
                     throw new Error('評価が不正です。');
                 data.ratings = { clarity: num(d.ratings.clarity, 0, 5), novelty: num(d.ratings.novelty, 0, 5), feasibility: num(d.ratings.feasibility, 0, 5) };
+            }
+            // Optional and additive: documents written before the play map still parse unchanged.
+            if (d.play !== undefined) {
+                if (!record(d.play) || (n.type !== 'idea' && n.type !== 'note'))
+                    throw new Error('遊びの地図の位置が不正です。');
+                data.play = { x: num(d.play.x, -1, 1), y: num(d.play.y, -1, 1) };
             }
             return { id: text(n.id, 100), type: n.type as BoardNode['type'], position: { x: num(n.position.x, -1e6, 1e6), y: num(n.position.y, -1e6, 1e6) }, width: num(n.width, 40, 10000), height: num(n.height, 40, 10000), data };
         });
