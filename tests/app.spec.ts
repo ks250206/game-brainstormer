@@ -61,3 +61,12 @@ test('mobile panels open and close without covering all navigation', async ({ pa
     await expect(page.getByRole('complementary', { name: 'リアクションラボ' })).toBeVisible();
     await page.getByRole('button', { name: 'ラボパネルを閉じる' }).click();
 });
+test('Astryx primary button keeps its fill (app resets must not override Astryx layers)', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.react-flow')).toBeVisible();
+    const button = page.getByRole('button', { name: '反応を試す', exact: true });
+    await expect(button).toBeVisible();
+    const background = await button.evaluate(el => getComputedStyle(el).backgroundColor);
+    expect(background).not.toBe('rgba(0, 0, 0, 0)');
+    expect(background).not.toBe('transparent');
+});
