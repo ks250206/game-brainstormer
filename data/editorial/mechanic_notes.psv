@@ -1,0 +1,207 @@
+# Editorial notes for the 203 mechanics. Original explanations written for this project;
+# they are not quotations or definitions from the book. Mechanic names/IDs come from the public index.
+# Columns: id | play (agon alea mimicry ilinx, each 0-3) | summary | representative works (" / " separated)
+# Works are illustrative (board games and video games), chosen by the editor. Blank = no confident example.
+STR-01|3000|各プレイヤーが自分の勝利のために競い合う、最も基本的な構造。|チェス / カタン / Street Fighter 6
+STR-02|2010|全員がゲームのシステムを相手に協力し、共に勝つか負ける。|パンデミック / Spirit Island / It Takes Two
+STR-03|2010|チームに分かれ、チーム単位で勝敗を競う。|Codenames / コントラクトブリッジ / Counter-Strike 2
+STR-04|2100|一人で遊ぶことを前提に、ゲーム側が課題や対戦相手を用意する。|Onirim / Mage Knight / クロンダイク（ソリティア）
+STR-05|2010|協力しないと全員が負けるが、勝者は一人だけという緊張をもつ。|Republic of Rome / Archipelago
+STR-06|2110|一人の敗者を決め、それ以外は全員が勝者になる。|ババ抜き / ジェンガ / 黒ひげ危機一発
+STR-07|1120|協力する集団の中に、隠れて妨害する裏切り者がいる。|Battlestar Galactica / Shadows over Camelot / Among Us
+STR-08|1020|目標の異なるシナリオを続けて遊び、物語や状況が変化していく。|Gloomhaven / Descent: Journeys in the Dark / XCOM 2
+STR-09|2100|短いラウンドで得点し、盤面を戻して何度も繰り返す。|Love Letter / 6 nimmt! / ハーツ
+STR-10|1020|プレイの結果が部品やルールに永続的に書き込まれ、次回以降へ引き継がれる。|Pandemic Legacy / Risk Legacy / Charterstone
+TRN-01|2000|決まった順番で手番が回る。|チェス / カタン / カルカソンヌ
+TRN-02|2000|得点や状況（下位から等）に応じて手番順が変わる。|Power Grid（電力会社）
+TRN-03|3000|手番の順番そのものを資源で競り落とす。|Age of Steam / Cyclades
+TRN-04|2000|先手が毎ラウンド順に移り、先手番の有利不利をならす。|Puerto Rico
+TRN-05|2000|行動の一つとして、次ラウンドのスタートプレイヤーを確保する。|Agricola / Lords of Waterdeep
+TRN-06|2000|先にパスした順に、次ラウンドの手番が決まる。|Terra Mystica / Gaia Project / Keyflower
+TRN-07|3001|手番を設けず、全員が同時に素早く行動する。|Galaxy Trucker / Captain Sonar / Space Alert
+TRN-08|2001|リアルタイムで動く区間と、立ち止まって処理する区間を交互に行う。|Galaxy Trucker / Escape: The Curse of the Temple
+TRN-09|2100|全員が秘密裏に行動を選び、一斉に公開して解決する。|7 Wonders / Diplomacy / Frozen Synapse
+TRN-10|2010|選んだ役割の番号順に手番が進む。|Citadels（あやつり人形）/ Puerto Rico
+TRN-11|1200|手番順を毎回ランダムに決める。|Bolt Action
+TRN-12|3001|砂時計などの実時間で、行動の制限時間を設ける。|Galaxy Trucker / Escape: The Curse of the Temple / Magic Maze
+TRN-13|2000|行動ごとに時間を消費し、トラック上で最も遅れている人が次に動く。|Tokaido / Patchwork / Thebes
+TRN-14|2000|行動の権利を示すトークンを受け渡して手番を進める。|
+TRN-15|2000|全員が一つのフェイズを交互に進めるか、一人が全フェイズを終えてから次へ渡すかの設計。|Agricola / カタン
+TRN-16|1100|罰やコストとして、次の手番を飛ばす。|UNO（スキップ）/ モノポリー（刑務所）
+TRN-17|2000|他人の手番中に反応して行動を差し込む。|Magic: The Gathering / Cosmic Encounter
+ACT-01|2000|手番ごとのポイントを、好きな行動に配分する。|パンデミック / Tikal / Wasteland 3
+ACT-02|2000|共有の行動候補から順に選び取り、他人の選択肢を減らす。|Puerto Rico / Agricola
+ACT-03|2000|使った行動は、回復の行動を取るまで再使用できない。|Concordia / Gloomhaven
+ACT-04|2100|1枚のカードを、行動とイベントのどちらに使うかを選ぶ。|Twilight Struggle / Labyrinth: The War on Terror / 1960: The Making of the President
+ACT-05|2000|命令カードで、動かせる部隊や地域を指定・制限する。|Memoir '44 / Battle Cry / Commands & Colors: Ancients
+ACT-06|2000|行動を予約して並べ、順に実行する。|RoboRally / Colt Express / Mechs vs. Minions
+ACT-07|2010|全員の予約が一つの列に並び、互いに影響しながら解決される。|Colt Express / Mechs vs. Minions
+ACT-08|2000|手番の人が選んだ行動に、他の人も便乗できる。|Glory to Rome / Eminent Domain / Puerto Rico
+ACT-09|2000|部隊や地域に命令トークンを置いて行動を指示する。|A Game of Thrones: The Board Game / Twilight Imperium
+ACT-10|2000|円環状に並んだ行動を進め、遠くへ飛ばすほどコストがかかる。|Imperial / Navegador / Hamburgum
+ACT-11|2000|同じ行動を続けて選べないなどの制約で、選択肢を絞る。|
+ACT-12|2010|プレイヤーごとに異なる能力を持ち、非対称な戦略を生む。|Cosmic Encounter / Root / パンデミック（役職）
+ACT-13|2000|一度しか使えない強力な能力で、使いどころの判断を生む。|
+ACT-14|2000|一時的な有利を表すトークンを使い、使うと相手へ渡る。|Twilight Struggle（チャイナカード）
+ACT-15|2010|条件を満たすと、新しい行動・地域・要素が開放される。|Hollow Knight / Gloomhaven
+ACT-16|2010|技術や段階を進めるほど、新しい能力やボーナスを得る。|Through the Ages / Terra Mystica / Sid Meier's Civilization VI
+ACT-17|1200|定期的・ランダムに起こる出来事が状況を変える。|パンデミック（エピデミック）/ Frostpunk / RimWorld
+ACT-18|1020|物語上の選択肢を選び、結果が展開を変える。|Tales of the Arabian Nights / Sleeping Gods / Detroit: Become Human
+ACT-19|1200|盤面上の並びを完成させると報酬を得る。|ビンゴ
+ACT-20|2000|カードやタイルを重ね、上の層が下の層の効果を覆う・変える。|Mystic Vale
+ACT-21|2010|駒や列を押し出し、盤面をずらす。|ラビリンス / アバロン / 倉庫番
+ACT-22|2000|同じ色・数・形を合わせる。|ドミノ / UNO / Bejeweled 3
+ACT-23|1010|絵を描くこと自体を行動や判定に使う。|Pictionary / Telestrations / Drawful 2
+RES-01|1200|出目やカードの数値が高い方が勝つ、単純な判定。|戦争（トランプ）/ Risk
+RES-02|1200|能力値に対し、出目などで成功・失敗を判定する。|Dungeons & Dragons / Arkham Horror / Baldur's Gate 3
+RES-03|1201|特定の出目で大成功・大失敗となり、劇的な結果を生む。|Dungeons & Dragons / Baldur's Gate 3
+RES-04|1200|戦力の比率とダイスから、表を引いて結果を決める。|Afrika Korps / PanzerBlitz
+RES-05|1200|数字ではなく絵柄のダイス面で結果を決める。|King of Tokyo / Memoir '44
+RES-06|2100|手札のカードを出して戦闘や判定を解決する。|Dune / A Game of Thrones: The Board Game / Cosmic Encounter
+RES-07|2100|互いに相性のある選択肢で、三すくみの読み合いをする。|じゃんけん / Street Fighter 6（打撃・投げ・ガード）
+RES-08|2010|協力すれば共に得をし、裏切れば一方だけが得をする構造。|Diplomacy / Cosmic Encounter
+RES-09|2000|交互に要素を取り除き、最後に残るもので決着する。|ニム / Hey, That's My Fish!
+RES-10|3001|器用さや身体の動きそのもので結果を決める。|ジェンガ / クロキノール / ツイスター
+RES-11|2000|位置関係だけで駒を取り、攻撃に運が絡まない。|チェス / 将棋 / チェッカー
+RES-12|2000|相手の駒や領域を囲んで取る。|囲碁 / オセロ
+RES-13|1010|戦闘や局地戦を、別の小さな盤面で解決する。|Heroes of Might and Magic III / Total War: WARHAMMER III
+RES-14|2100|戦闘にどれだけの戦力を投じるか、事前に決めて公開する。|Dune / Cosmic Encounter
+RES-15|1010|参加者の投票で結果を決める。|Among Us / Secret Hitler / Twilight Imperium
+RES-16|1010|一人が審査員となり、他の人の提出物の優劣を決める。|Apples to Apples / Cards Against Humanity
+RES-17|1010|限られたヒントから、目標を当てさせる。|Codenames / Dixit / Just One
+RES-18|2000|同点のときの決着方法を、あらかじめ決めておく。|
+RES-19|2100|振ったダイスの中から、使うものを選ぶ。|Sagrada / Roll for the Galaxy / Dicey Dungeons
+RES-20|2000|行動ごとに速さがあり、速い行動から解決する。|Gloomhaven / Final Fantasy X
+RES-21|1200|一部のダイスを確定し、残りを振り直す。|ヤッツィー / King of Tokyo / Dice Throne
+RES-22|2100|他人が削った獲物に最後の一撃を加え、報酬を横取りする。|Dota 2（ラストヒット）/ Cutthroat Caverns
+RES-23|1110|持っていると不利になる物を、他人に押し付け合う。|ババ抜き
+RES-24|3001|指で駒を弾いて動かす。|クロキノール / Flick 'em Up! / カロム
+RES-25|2101|物を積み上げ、崩さないように置く。|ジェンガ / ワニに乗る？ / Tricky Towers
+RES-26|2000|隣のプレイヤー同士だけで、比較や取引を行う。|7 Wonders / Between Two Cities
+VIC-01|2000|終了時の盤面の状態（支配地域など）から得点する。|カルカソンヌ / El Grande / Small World
+VIC-02|2000|行動するたびに得点を得る。|Ticket to Ride / Splendor
+VIC-03|2000|失われうる得点と、確定した得点を区別する。|カタン（最長交易路・最大騎士力）
+VIC-04|2100|勝利点を支払いにも使え、使うか貯めるかを迷わせる。|Small World
+VIC-05|2100|得点を公開するか隠すかで、追い上げや牽制の判断が変わる。|Ticket to Ride（目的地チケット）/ Small World（コイン）
+VIC-06|2000|最後に、達成条件に応じた追加得点を与える。|Ticket to Ride / Agricola / Terraforming Mars
+VIC-07|3000|最初に目標へ到達した人が勝つ。|Formula D / Flamme Rouge / Trackmania
+VIC-08|3000|脱落者を出し、最後まで残った人が勝つ。|Risk / モノポリー / PUBG: Battlegrounds
+VIC-09|2000|決められたラウンド数で終了する。|Agricola / 7 Wonders
+VIC-10|2100|山札や共有資源が尽きると終了する。|Dominion / カルカソンヌ
+VIC-11|2000|特定の条件を最初に満たした人が勝つ。|カタン / Splendor
+VIC-12|2100|特定の出来事が規定回数起きると終了する。|パンデミック（アウトブレイク）
+VIC-13|3000|現実の時間制限で終了する。|Escape: The Curse of the Temple / Overcooked! 2
+VIC-14|2000|地点同士をつなぐと勝つ・得点する。|Hex / TwixT / Ticket to Ride
+VIC-15|2100|特殊な条件を満たすと、その場でゲームが終わる。|Twilight Struggle（DEFCON）
+VIC-16|2000|終盤に特別な最終局面を設け、決着を盛り上げる。|Arkham Horror（旧支配者との最終決戦）
+VIC-17|3000|特定の地点を占拠し続けることで得点・勝利する。|King of Tokyo / Overwatch 2（コントロール）
+VIC-18|2100|トップに不利・下位に有利な仕組みで差を縮める。|Power Grid / マリオカート（アイテム）
+VIC-19|3000|一本のトラックを両者が引き合い、端に達した側が勝つ。|Twilight Struggle / 7 Wonders Duel
+VIC-20|2000|複数の得点項目のうち、最も低いものだけが得点になる。|Tigris & Euphrates / Ingenious
+VIC-21|2000|要素を正しい順序に並べることを目標にする。|Timeline / Hitster
+UNC-01|1210|手の内を隠して賭け、はったりで相手を降ろす。|ポーカー / ライアーズダイス / Skull
+UNC-02|1300|続けるほど報酬が増えるが、失敗すると失う賭けを繰り返す。|Can't Stop / Incan Gold
+UNC-03|3000|公開された情報を覚えておくことが判断の鍵になる。|神経衰弱 / Hanabi
+UNC-04|1120|秘密の役割や陣営を持ち、正体を探り合う。|The Resistance / 人狼 / Among Us
+UNC-05|1110|役割によって知っている情報が異なる。|Codenames（スパイマスター）/ Mysterium / Keep Talking and Nobody Explodes
+UNC-06|1010|伝えられる情報や方法を制限し、意図を汲み取らせる。|Hanabi / The Crew / The Mind
+UNC-07|1200|誰も知らない情報（伏せ札や山札）が状況を左右する。|パンデミック / Slay the Spire
+UNC-08|1100|一部のプレイヤーだけが知る情報がある。|Stratego / バトルシップ / Scotland Yard
+UNC-09|2200|確率の分布を読み、期待値で判断する。|カタン（出目の分布）/ XCOM 2（命中率）/ Balatro
+UNC-10|1200|初期配置を毎回変え、再プレイの変化を生む。|カタン / Dominion / Spirit Island
+UNC-11|1110|誰が何を操作しているかが分からない。|Heimlich & Co.（スパイゲーム）
+UNC-12|3000|手がかりから論理的に答えを絞り込む。|Cluedo / Mastermind / Return of the Obra Dinn
+UNC-13|2010|観察した事例から、隠れた規則を推測する。|Zendo / Eleusis / The Witness
+UNC-14|2010|質問への回答から正体や答えを推理する。|Guess Who? / Spyfall
+ECO-01|2000|資源を決まった比率で別の資源に変換する。|カタン（港での交換）/ Splendor
+ECO-02|2010|プレイヤー同士で資源や権利を取引する。|カタン / Bohnanza / Chinatown
+ECO-03|2100|需要と供給で価格が変わる市場を通じて売買する。|Power Grid / Offworld Trading Company / Brass
+ECO-04|2000|支払いと受け取りの時期をずらして購入する。|
+ECO-05|2000|定期的に資源やお金が入ってくる。|モノポリー（給料）/ Power Grid / Terraforming Mars
+ECO-06|1100|何もしなくても、時間とともに資源が増える。|Cookie Clicker / Agricola（動物の繁殖）
+ECO-07|2000|将来の返済を条件に、今すぐ資金を得る。|Brass / モノポリー（抵当）/ Age of Steam
+ECO-08|2000|自分の手番に限らず、いつでも購入できる。|
+ECO-09|2000|一人が分け、もう一人が先に選ぶことで公平な分配を作る。|San Marco / Piece o' Cake
+ECO-10|2000|条件を満たすと購入コストが下がる。|Splendor / 7 Wonders
+ECO-11|2000|資源を払って、既存の要素を強化する。|カタン（開拓地から都市へ）/ Kingdom Rush
+ECO-12|1200|生産量や生産場所がランダムに決まる。|カタン / 街コロ
+ECO-13|2100|資源を先に投じ、後でより大きな見返りを期待する。|Acquire / Stockpile / Chicago Express
+ECO-14|2000|物件や会社を所有し、他者の利用から利益を得る。|モノポリー / 1830
+ECO-15|2010|条件付きの約束を結び、果たすと報酬を得る。|Lords of Waterdeep / Elite Dangerous
+ECO-16|1110|資源を渡して他プレイヤーの行動を左右する。|I'm the Boss! / Intrigue
+ECO-17|1100|選ばれずに残った選択肢にボーナスを積み、魅力を高める。|Small World / Puerto Rico
+ECO-18|1110|話し合いで取引や合意を作る。|カタン / Diplomacy / Chinatown
+ECO-19|1010|一時的な協力関係を結び、利益を分け合う。|Cosmic Encounter / Diplomacy / Twilight Imperium
+ECO-20|2000|資源が列を流れ、取り出す順序や時期が判断になる。|Factorio / Satisfactory
+AUC-01|3000|全員が公開の場で競り値を上げていく。|Modern Art / Power Grid
+AUC-02|3000|誰かが降りるまで自由に値を吊り上げる。|Modern Art / Power Grid
+AUC-03|3000|手番順に値を上げ、パスした人から抜けていく。|Power Grid / For Sale
+AUC-04|2100|各自が秘密に入札し、一斉に公開する。|Modern Art / For Sale
+AUC-05|2100|封印入札で、同じ値の入札が打ち消し合う。|ハゲタカのえじき
+AUC-06|2000|入札できる値や手段に制限がある。|Ra
+AUC-07|2000|各プレイヤーが一回ずつだけ入札する。|Modern Art
+AUC-08|2100|価格が下がっていき、最初に買うと宣言した人が得る。|オランダの花市場（現実の競り方式）
+AUC-09|2000|最高額の入札者が、2番目に高い入札額を支払う。|ヴィックリー・オークション（現実の入札方式）
+AUC-10|2000|入札の順位で、選ぶ順番を決める。|Cyclades / Amun-Re
+AUC-11|2000|複数の品物を同時に競る。|Amun-Re / Taj Mahal
+AUC-12|2000|支払ったお金が他のプレイヤーに渡り、場を循環する。|Modern Art / Isle of Skye
+AUC-13|2000|最も安い条件を提示した人が仕事や権利を得る。|公共工事の入札（現実の方式）
+AUC-14|2001|手先の器用さが入札の強さになる。|
+AUC-15|2000|入札用のマスに駒を置き、置き場ごとの値段で競る。|Keyflower
+AUC-16|2000|先に宣言するほど高く支払う、優先権付きの降り競り。|
+AUC-17|1200|入札額が、その目標を達成できるかの賭けになる。|コントラクトブリッジ / ウィザード
+AUC-18|2000|落札できなかった人に補償を与える。|
+WPL-01|2000|ワーカーを行動マスに置き、置かれたマスは他の人が使えない。|Agricola / Caylus / Lords of Waterdeep
+WPL-02|2000|能力の違うワーカーを使い分ける。|Viticulture / Lorenzo il Magnifico
+WPL-03|2000|ワーカーの数が増減し、行動回数が変わる。|Agricola（家族を増やす）/ Stone Age
+WPL-04|1100|ダイスの出目がワーカーの強さになる。|Kingsburg / Alien Frontiers / Troyes
+WPL-05|2000|新しい行動マス（建物）が増え、占有で他者を妨害する。|Caylus / Le Havre / Lords of Waterdeep
+WPL-06|2000|1体だけのワーカーを動かして行動を選ぶ。|Great Western Trail / Istanbul
+WPL-07|2000|行動マスを使うと報酬を得たり、建物の所有者に報酬が入る。|Caylus / Le Havre
+WPL-08|2000|配置の順番と解決の順番を分け、先読みを生む。|Caylus
+MOV-01|2000|盤面をマスに区切り、マス単位で移動する。|チェス / すごろく / Into the Breach
+MOV-02|0300|ダイスの出目の数だけ進む。|すごろく / モノポリー / 桃太郎電鉄
+MOV-03|2000|駒ごとに決まった動き方をする。|チェス / 将棋 / Hive
+MOV-04|2000|移動力を消費し、地形ごとのコストで進む。|The Battle for Wesnoth / Sid Meier's Civilization VI / XCOM 2
+MOV-05|2000|移動に燃料や資源を支払う。|Mage Knight / FTL: Faster Than Light
+MOV-06|2000|マスではなく、定規で距離を測って動く。|Warhammer 40,000 / X-Wing Miniatures Game
+MOV-07|1200|面の構成が違うダイスで移動量を決める。|
+MOV-08|1101|意図とは別に、駒が流される・滑っていく。|
+MOV-09|2000|時間を細かく刻み、速いものほど多く動く。|Star Fleet Battles
+MOV-10|2000|移動の命令を事前に組み、まとめて実行する。|RoboRally / Mechs vs. Minions / Colt Express
+MOV-11|2000|他の駒との位置関係で移動先が決まる。|
+MOV-12|2000|駒を拾い、一つずつ配りながら進む。|マンカラ（カラハ）/ Trajan / Five Tribes
+MOV-13|2000|移動やジャンプを連続でつなげる。|チェッカー / ダイヤモンドゲーム
+MOV-14|1100|移動の方向や距離に偏りがある。|
+MOV-15|2000|複数の駒をまとめて動かす。|Risk / Axis & Allies
+MOV-16|1010|プレイ中に地図タイルを追加し、世界が広がる。|カルカソンヌ / Betrayal at House on the Hill
+MOV-17|2001|時間とともに移動できる範囲が狭まる。|PUBG: Battlegrounds / Hey, That's My Fish!
+MOV-18|2001|盤面そのものが動いたり形を変える。|ラビリンス / Forbidden Island
+MOV-19|2100|カードを使って移動する。|Flamme Rouge / Clank!
+MOV-20|2000|定規やテンプレートの形に沿って動く。|X-Wing Miniatures Game / Wings of Glory
+MOV-21|1010|置いた駒やタイルが道や地形として機能する。|Tsuro
+MOV-22|1010|複数の盤面・世界を行き来する。|Titanfall 2 / Dishonored 2
+MOV-23|2000|特定の条件で近道を使える。|ヘビと梯子 / Dark Souls（ショートカット）
+MOV-24|1110|移動経路を秘密にし、相手に推理させる。|Scotland Yard / Fury of Dracula / Whitehall Mystery
+ARC-01|2000|一つの領域を一人だけが完全に支配する。|Risk / Small World
+ARC-02|2000|領域内の駒の多さで支配権を決める。|El Grande / Blood Rage
+ARC-03|2000|兵種ごとの相性や役割を使い分ける。|Axis & Allies / Memoir '44 / Age of Empires II: Definitive Edition
+ARC-04|2000|領地を確保し、その範囲自体が得点や力になる。|囲碁 / カルカソンヌ
+ARC-05|2000|領域ごとに性質や価値が異なる。|Risk（大陸ボーナス）/ Sid Meier's Civilization VI
+ARC-06|2000|拠点から離れるほど力が弱まり、影響の届く範囲が限られる。|
+ARC-07|2000|部隊の周囲に、敵の移動を妨げる支配圏を持つ。|Panzer Corps 2 / Unity of Command II / The Battle for Wesnoth
+ARC-08|2000|視線が通るかどうかで攻撃や発見を判定する。|XCOM 2 / Commandos 2 / Advanced Squad Leader
+SET-01|2100|同種や異種の組み合わせを揃えるほど得点が上がる。|Sushi Go! / 7 Wonders
+SET-02|2000|タイルを置いて形や配置を作る。|カルカソンヌ / Azul / Kingdomino
+SET-03|2000|形の決まったピースでグリッドを覆う。|Patchwork / Blokus / Tetris Effect: Connected
+SET-04|2000|線路や道路を伸ばし、ネットワークを作る。|Ticket to Ride / Brass / Mini Metro
+SET-05|2000|要素の組み合わせで能力が連鎖・相乗する。|Wingspan / Race for the Galaxy / Balatro
+CAR-01|2100|各自が1枚ずつ出し、最も強いカードを出した人がまとめて取る。|コントラクトブリッジ / ハーツ / The Crew
+CAR-02|2100|前の人より強い組み合わせを出し続ける。|大富豪 / Tichu / The Great Dalmuti
+CAR-03|2100|手札から組（メルド）を作って場に出す。|ラミー / Rummikub / Canasta
+CAR-04|2100|引く枚数・手札上限・山札切れの扱いで資源管理を作る。|Magic: The Gathering / Slay the Spire
+CAR-05|2100|共通の市場からカードを買い足し、自分の山札を強くする。|Dominion / Slay the Spire / Monster Train
+CAR-06|2100|手札から1枚取って残りを回し、選択と妨害を同時に行う。|7 Wonders / Sushi Go! / Magic: The Gathering（ドラフト）
+CAR-07|2010|ゲーム前に、手持ちのカードから山札を組む。|Magic: The Gathering / Yu-Gi-Oh! Master Duel / Gwent: The Witcher Card Game
+CAR-08|2000|1枚のカードを、複数の用途から選んで使う。|Twilight Struggle / Race for the Galaxy / Glory to Rome
+CAR-09|2000|カードに付いた属性（タグ）で効果や条件が連動する。|Terraforming Mars / Ark Nova

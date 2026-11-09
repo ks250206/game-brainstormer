@@ -1,0 +1,176 @@
+# Editorial paidia ↔ ludus degree for every material (0 = paidia: free, improvised play;
+# 3 = ludus: codified rules, skill and discipline). After Roger Caillois, Man, Play and Games (1958).
+# Lines: subgroup:<tag subgroup id>|n  (default for tags in that subgroup)
+#        tag:<Steam tag label>|n       (override)
+#        mechanic:*|n                  (default for all mechanics)
+#        mechanic:<ID>|n               (override)
+# This is a brainstorming lens, not a measurement.
+subgroup:action-jump|2
+subgroup:action-shoot|2
+subgroup:action-melee|2
+subgroup:action-ride|2
+subgroup:action-sports|3
+subgroup:action-feel|1
+subgroup:action-sneak|2
+subgroup:strategy-tactics|3
+subgroup:strategy-grand|3
+subgroup:strategy-defense|3
+subgroup:strategy-tabletop|3
+subgroup:puzzle-logic|3
+subgroup:puzzle-deduce|2
+subgroup:puzzle-knowledge|3
+subgroup:systems-build|1
+subgroup:systems-automate|2
+subgroup:systems-manage|2
+subgroup:systems-simulate|1
+subgroup:progress-rpg|2
+subgroup:progress-collect|2
+subgroup:progress-incremental|2
+subgroup:structure-runs|2
+subgroup:structure-world|1
+subgroup:structure-challenge|3
+subgroup:structure-pace|2
+subgroup:story-story|1
+subgroup:story-character|1
+subgroup:story-mood|1
+subgroup:story-fear|1
+subgroup:story-mature|0
+subgroup:social-solo|2
+subgroup:social-coop|2
+subgroup:social-versus|3
+subgroup:social-crowd|1
+subgroup:world-fantasy|1
+subgroup:world-future|1
+subgroup:world-history|2
+subgroup:world-modern|1
+subgroup:world-nature|1
+subgroup:presentation-view|1
+subgroup:presentation-visual|1
+subgroup:presentation-sound|1
+subgroup:format-format|2
+subgroup:format-input|1
+subgroup:format-market|1
+subgroup:format-tools|0
+tag:Precision Platformer|3
+tag:Parkour|1
+tag:Runner|3
+tag:Bullet Hell|3
+tag:Arena Shooter|3
+tag:Hero Shooter|3
+tag:Fighting|3
+tag:2D Fighter|3
+tag:3D Fighter|3
+tag:Boxing|3
+tag:Wrestling|2
+tag:Musou|1
+tag:Racing|3
+tag:Driving|1
+tag:Flight|2
+tag:Skateboarding|1
+tag:Skating|1
+tag:Skiing|1
+tag:Snowboarding|1
+tag:BMX|1
+tag:Bikes|1
+tag:Offroad|1
+tag:Sailing|1
+tag:Pinball|2
+tag:Rhythm|3
+tag:Quick-Time Events|2
+tag:Fast-Paced|2
+tag:Bullet Time|2
+tag:Destruction|0
+tag:Physics|1
+tag:Intentionally Awkward Controls|1
+tag:Gambling|2
+tag:Dice|2
+tag:Mahjong|3
+tag:Solitaire|3
+tag:Hidden Object|2
+tag:Escape Room|3
+tag:Hacking|3
+tag:Sandbox|0
+tag:Decorating|0
+tag:Level Editor|1
+tag:City Builder|2
+tag:Base Building|2
+tag:Open World Survival Craft|1
+tag:Time Management|3
+tag:Inventory Management|3
+tag:Colony Sim|2
+tag:God Game|1
+tag:Life Sim|1
+tag:Job Simulator|2
+tag:Medical Sim|2
+tag:Automobile Sim|2
+tag:Space Sim|2
+tag:Character Customization|1
+tag:Idler|1
+tag:Procedural Generation|1
+tag:Replay Value|2
+tag:Traditional Roguelike|3
+tag:Exploration|1
+tag:Open World|1
+tag:Walking Simulator|0
+tag:Metroidvania|2
+tag:Immersive Sim|1
+tag:Survival|2
+tag:Real-Time|2
+tag:Nonlinear|1
+tag:Linear|2
+tag:Choices Matter|2
+tag:Visual Novel|1
+tag:Dynamic Narration|1
+tag:Desktop Companion|0
+tag:Relaxing|0
+tag:Cozy|0
+tag:Wholesome|0
+tag:Funny|0
+tag:Memes|0
+tag:Surreal|0
+tag:Psychedelic|0
+tag:Jump Scare|1
+tag:Competitive|3
+tag:eSports|3
+tag:PvP|3
+tag:Battle Royale|3
+tag:Party Game|1
+tag:Party|0
+tag:Social Deduction|2
+tag:Asymmetric VR|1
+tag:VR|1
+tag:360 Video|0
+tag:Abstract|1
+tag:Music|1
+tag:Arcade|3
+tag:Casual|1
+tag:Minigames|1
+tag:Experimental|0
+tag:Tutorial|3
+tag:Game Development|1
+tag:Moddable|1
+tag:Mod|1
+tag:Addictive|2
+mechanic:*|3
+mechanic:STR-02|2
+mechanic:STR-07|2
+mechanic:STR-08|2
+mechanic:ACT-18|2
+mechanic:ACT-23|1
+mechanic:RES-08|2
+mechanic:RES-10|2
+mechanic:RES-15|2
+mechanic:RES-16|1
+mechanic:RES-17|2
+mechanic:RES-23|1
+mechanic:RES-24|2
+mechanic:RES-25|2
+mechanic:UNC-01|2
+mechanic:UNC-04|2
+mechanic:UNC-06|2
+mechanic:UNC-14|2
+mechanic:ECO-16|1
+mechanic:ECO-18|1
+mechanic:ECO-19|1
+mechanic:MOV-08|2
+mechanic:MOV-16|2

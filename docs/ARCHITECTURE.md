@@ -29,15 +29,58 @@ the portable renderer uses the same subscription API.
 The second renderer is an explicit fallback, not a claim that the requested stack
 was installed or its browser tests executed.
 
-## Semantic catalog
+## Design catalog
 
-Every tag receives one explicit primary category and optional secondary facets.
+Eleven clusters, each answering one design question (verbs, decisions, puzzles, systems,
+progression, structure, feeling, players, setting, presentation, format). Every tag
+receives one explicit primary category and subgroup, plus optional secondary facets.
 Materials retain original IDs and rank. Mechanics retain the original chapter and
 also participate in semantic clusters. Search is Unicode-normalized lexical AND
 search across labels, aliases, IDs and category names, not vector similarity.
 
 The taxonomy is encoded in `scripts/prepare-data.py`. Generation validates unique
 coverage of all 429 tags and emits the same JSON to `src/data` and `public`.
+Editorial notes in `data/editorial/*.psv` add a summary, illustrative works and Caillois
+weights (`play`: agon/alea/mimicry/ilinx, 0-3) to every material; generation fails if any
+tag or mechanic is missing or malformed.
+
+## Two separate map components
+
+They answer different questions and share no position data.
+
+**1. Caillois map (`src/core/caillois.ts`, `PlayMap.tsx`).** Agon, alea, mimicry and ilinx
+are treated as four independent 0-3 intensities, not exclusive classes or opposite poles.
+The view keeps Caillois' table layout — four element columns, paidia (top) to ludus
+(bottom, `ludus`, `data/editorial/ludus.psv`) — but a card appears in every column where it
+has strength (marker size = intensity) and the selected card is linked across columns;
+column tint follows the board's average intensity, not an exclusive share. A hypothesis averages its materials. The core
+computes per-element board averages, how many cards clearly contain each element, the
+six pairwise co-occurrences (with Caillois' own notes on each pairing), weak elements
+(average < 1) and deterministic suggestions that add an element without requiring it to
+be the only one. Positions come from catalog data only; nothing is stored.
+
+**2. Two-axis, four-quadrant map (`src/core/quadrant.ts`, `QuadrantMap.tsx`).** A
+general positioning map shown in place of the whiteboard (`UIState.view`). The designer
+picks axis labels and quadrant names (presets or custom) and places cards by hand.
+Stored per board as optional `board.quadrant` (`preset`, `x`, `y`, `names[4]`,
+`positions{nodeId: {x,y}}` in [-1, 1]); additive to schemaVersion 1, validated on import
+(known non-frame cards only, finite ranges, four names), pruned when cards are deleted,
+undoable, and listed per quadrant in the Markdown export. Nothing is inferred from data.
+
+## Cascade layers
+
+Astryx ships its CSS in `@layer reset, astryx-base, astryx-theme`. Unlayered rules beat
+every layer, so the app's element resets (`button`, `input`, `a`…) live in
+`@layer reset`; app-specific classes stay unlayered. Without this, an unlayered
+`button{background:none}` erased Astryx's primary Button fill and SegmentedControl
+selection.
+
+## Theme
+
+Every literal colour in `src/styles.css` is a `light-dark(light, dark)` pair. Astryx
+`Theme mode` syncs `<html data-theme>` (light | dark, absent = system); an inline script
+in `index.html` applies a stored choice before first paint. React Flow receives the same
+`colorMode`. The preference is a renderer setting in localStorage, not workspace data.
 
 ## Reactions
 

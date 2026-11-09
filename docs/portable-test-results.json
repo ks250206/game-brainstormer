@@ -2,7 +2,7 @@
   "environment": "Chromium / actual portable HTML injected with Playwright set_content; browser navigation restricted; native localStorage unavailable",
   "tests": [
     {
-      "name": "initial board, all ten semantic clusters and connections render",
+      "name": "initial board, all eleven design clusters and connections render",
       "passed": true
     },
     {

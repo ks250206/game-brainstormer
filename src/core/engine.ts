@@ -1,4 +1,5 @@
-import type { Board, BoardNode, Catalog, Material, Hypothesis, Operator, Workspace, Position, Recipe } from './types.ts';
+import type { Board, BoardNode, Catalog, Material, Hypothesis, MapPoint, Operator, QuadrantMap, Workspace, Position, Recipe } from './types.ts';
+import { QUADRANT_ORDER, quadrantMeaning, quadrantSummary } from './quadrant.ts';
 export const STORAGE_KEY = 'game-brainstormer.workspace.v1';
 export const MAX_IMPORT_BYTES = 5000000;
 export const OPERATORS: {
@@ -52,7 +53,7 @@ export function initialWorkspace(c: Catalog): Workspace {
     return { schemaVersion: 1, activeBoardId: board.id, boards: [board], favorites: [a.data.materialId!, b.data.materialId!, 'MOV-10', 'ECO-07', 'MOV-12'], recipes: [] };
 }
 export function makeIdeaNode(h: Hypothesis, position: Position): BoardNode { return { id: uid('idea'), type: 'idea', position, width: 310, height: 310, data: { title: h.title, body: h.rule, tone: 'peach', status: 'seed', hypothesis: clone(h), ratings: { clarity: 0, novelty: 0, feasibility: 0 } } }; }
-const verbs: Record<string, string> = { movement: '移動して目標に到達する', combat: '相手の行動を読み、攻撃する', thinking: '情報を集めて仮説を確かめる', systems: '設備を組み、資源を運用する', progress: '獲得した能力を組み替える', social: '他のプレイヤーと役割を調整する', world: '世界を探索し、発見する', feeling: '物語の選択をする', aesthetic: '空間の見え方を切り替える', format: '短い課題に繰り返し挑む' };
+const verbs: Record<string, string> = { action: '跳ぶ・撃つ・操縦するなど、瞬間の操作をする', strategy: '配置と順序を計画し、相手を読む', puzzle: '情報を集めて仮説を確かめる', systems: '設備を組み、資源を運用する', progress: '獲得した能力や装備を組み替える', structure: '区間や周回をひとつ攻略する', story: '物語の選択をする', social: '他のプレイヤーと役割を調整する', world: '世界を探索し、発見する', presentation: '空間の見え方を切り替える', format: '短い課題に繰り返し挑む' };
 const mechanisms: Record<string, {
     action: string;
     cost: string;
@@ -96,7 +97,7 @@ export function makeHypotheses(c: Catalog, ids: string[], baseId: string, operat
         return [];
     const main = mechanics[Math.abs(variant) % mechanics.length]!;
     const system = mechanisms[main.chapterCode ?? 'ACT']!;
-    const verb = verbs[base.primaryCluster] ?? verbs.thinking!;
+    const verb = verbs[base.primaryCluster] ?? verbs.puzzle!;
     const others = tags.filter(t => t.id !== base.id).map(t => t.label);
     const qualifiers = others.length ? `体験の条件は「${others.join(' × ')}」。` : '';
     const extra = mechanics.filter(m => m.id !== main.id).map(m => m.label);
@@ -132,7 +133,7 @@ export function discover(c: Catalog, excluded: string[], baseId: string, seed = 
     const base = material(c, baseId);
     const eligible = c.materials.filter(m => !excluded.includes(m.id) && m.id !== baseId);
     const distant = eligible.filter(m => !base || m.primaryCluster !== base.primaryCluster);
-    const tagPool = distant.filter(m => m.kind === 'tag' && !['format', 'aesthetic'].includes(m.primaryCluster));
+    const tagPool = distant.filter(m => m.kind === 'tag' && !['format', 'presentation'].includes(m.primaryCluster));
     const mechPool = distant.filter(m => m.kind === 'mechanic');
     const pick = (arr: Material[], salt: number) => arr.length ? arr[((Math.abs(seed) + 1) * 37 + salt * 17) % arr.length]!.id : '';
     return [pick(tagPool, 1), pick(mechPool, 2)].filter(Boolean);
@@ -159,6 +160,9 @@ export function toMarkdown(board: Board, c: Catalog): string {
         if (n.data.ratings)
             lines.push(`手動評価（0は未評価）: ${JSON.stringify(n.data.ratings)}`, '');
     }
+    const q = board.quadrant, qs = quadrantSummary(board);
+    if (q && qs.placed.length)
+        lines.push('## 二軸四象限マップ', '', `横軸: ${q.x.negative} ← → ${q.x.positive} / 縦軸: ${q.y.negative} ↓ ↑ ${q.y.positive}`, '', ...QUADRANT_ORDER.flatMap(o => [`### ${o.position}「${q.names[o.index]}」（${quadrantMeaning(q, o.index)}）`, ...(qs.placed.filter(p => p.quadrant === o.index).map(p => `- ${board.nodes.find(n => n.id === p.nodeId)?.data.title}`)), ...(qs.counts[o.index] ? [] : ['- （空白）']), '']));
     if (board.edges.length)
         lines.push('## 関係', '', ...board.edges.map(e => `- ${board.nodes.find(n => n.id === e.source)?.data.title} → ${board.nodes.find(n => n.id === e.target)?.data.title}：${e.label}`), '');
     return lines.join('\n');
@@ -201,6 +205,21 @@ function op(x: unknown): Operator { if (!OPERATORS.some(o => o.id === x))
 function hypothesis(x: unknown, c: Catalog): Hypothesis { if (!record(x))
     throw new Error('仮説データが不正です。'); return { title: text(x.title, 300), rule: text(x.rule), example: text(x.example), mvp: text(x.mvp), risk: text(x.risk), question: text(x.question), materials: ids(x.materials, c), operator: op(x.operator), origin: text(x.origin, 300), baseId: ids([x.baseId], c)[0]!, ...(x.sourceId ? { sourceId: text(x.sourceId, 100) } : {}) }; }
 /** Strict whitelist validation. Imported HTML is always treated as text, never executed. */
+function quadrantMap(q: unknown, cards: Set<string>): QuadrantMap {
+    if (!record(q) || !record(q.x) || !record(q.y) || !record(q.positions) || !Array.isArray(q.names) || q.names.length !== 4)
+        throw new Error('四象限マップの形式が不正です。');
+    const axis = (a: Record<string, unknown>) => ({ negative: text(a.negative, 40), positive: text(a.positive, 40) });
+    const entries = Object.entries(q.positions);
+    if (entries.length > 1000)
+        throw new Error('四象限マップのカードが多すぎます。');
+    const positions: Record<string, MapPoint> = {};
+    for (const [id, p] of entries) {
+        if (!cards.has(id) || !record(p))
+            throw new Error('四象限マップに存在しないカードがあります。');
+        positions[id] = { x: num(p.x, -1, 1), y: num(p.y, -1, 1) };
+    }
+    return { preset: text(q.preset, 40), x: axis(q.x), y: axis(q.y), names: q.names.map(n => text(n, 40)) as QuadrantMap['names'], positions };
+}
 export function parseWorkspace(json: string, c: Catalog): Workspace {
     if (new TextEncoder().encode(json).length > MAX_IMPORT_BYTES)
         throw new Error('ファイルが大きすぎます（上限5 MB）。');
@@ -243,7 +262,11 @@ export function parseWorkspace(json: string, c: Catalog): Workspace {
             throw new Error('接続先が存在しないか、自己接続です。'); return { id: text(e.id, 100), source, target, label: text(e.label, 200) }; });
         if (new Set(edges.map(e => e.id)).size !== edges.length)
             throw new Error('接続IDが重複しています。');
-        return { id: text(b.id, 100), title: text(b.title, 300), nodes, edges, viewport: { x: num(b.viewport.x, -1e7, 1e7), y: num(b.viewport.y, -1e7, 1e7), zoom: num(b.viewport.zoom, 0.1, 4) }, updatedAt: text(b.updatedAt, 100) };
+        const board: Board = { id: text(b.id, 100), title: text(b.title, 300), nodes, edges, viewport: { x: num(b.viewport.x, -1e7, 1e7), y: num(b.viewport.y, -1e7, 1e7), zoom: num(b.viewport.zoom, 0.1, 4) }, updatedAt: text(b.updatedAt, 100) };
+        // Optional and additive: boards saved before the quadrant map still parse unchanged.
+        if (b.quadrant !== undefined)
+            board.quadrant = quadrantMap(b.quadrant, new Set(nodes.filter(n => n.type !== 'frame').map(n => n.id)));
+        return board;
     });
     if (!boards.length || new Set(boards.map(b => b.id)).size !== boards.length)
         throw new Error('ボードが空、またはIDが重複しています。');

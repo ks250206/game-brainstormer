@@ -1,9 +1,10 @@
-import { memo, useState, useRef } from 'react';
+import { memo, useContext, useState, useRef } from 'react';
 import { ReactFlow, ReactFlowProvider, Handle, Position, MiniMap, SelectionMode, type Node, type NodeProps, type NodeChange, type ReactFlowInstance } from '@xyflow/react';
 import type { BoardNode, NodeKind, Position as Point } from '../core/types.ts';
 import { material } from '../core/engine.ts';
-import { useWorkbench } from './context.tsx';
+import { useWorkbench, useIsDark, ThemeModeContext } from './context.tsx';
 import { Icon } from './Icons.tsx';
+import { MobileNav, ViewSwitch } from './BoardChrome.tsx';
 type CardData = BoardNode['data'] & {
     kind: NodeKind;
 } & Record<string, unknown>;
@@ -35,6 +36,7 @@ function BoardInner() {
     const { store, state, board } = useWorkbench();
     const [flow, setFlow] = useState<ReactFlowInstance<FlowNode> | null>(null);
     const connecting = useRef<string | null>(null);
+    const mode = useContext(ThemeModeContext), dark = useIsDark();
     const nodes: FlowNode[] = board.nodes.map(n => ({ id: n.id, type: 'card', position: n.position, data: { ...n.data, kind: n.type }, width: n.width, height: n.height, style: { width: n.width, height: n.height }, selected: state.selected.includes(n.id), zIndex: n.type === 'frame' ? 0 : 1 }));
     const edges = board.edges.map(e => ({ ...e, selected: e.id === state.selectedEdge, type: 'smoothstep', labelStyle: { fontSize: 10 }, labelBgPadding: [6, 4] as [
             number,
@@ -51,14 +53,14 @@ function BoardInner() {
         store.ui({ selected }); }
     return <section className="board-area" aria-label="ブレストのホワイトボード">
   <div className="canvas-heading"><div className="eyebrow">YOUR NEXT GAME STARTS HERE</div><h1>つないで、ずらして、化学反応を。</h1></div><div className="board-chip">無限キャンバス · ローカル保存</div>
-  <nav className="mobile-nav" aria-label="パネル切り替え"><button onClick={() => store.ui({ mobilePanel: state.mobilePanel === 'library' ? 'none' : 'library' })}>素材</button><button onClick={() => store.ui({ mobilePanel: 'none' })}>ボード</button><button onClick={() => store.ui({ mobilePanel: state.mobilePanel === 'lab' ? 'none' : 'lab' })}>ラボ</button></nav>
+  <ViewSwitch /><MobileNav />
   <div className="react-flow-host" onDragOver={e => { e.preventDefault(); e.dataTransfer.dropEffect = 'copy'; }} onDrop={e => { e.preventDefault(); const id = e.dataTransfer.getData('application/game-brainstormer-material'); if (id && flow) {
         try {
             store.addMaterial(id, flow.screenToFlowPosition({ x: e.clientX, y: e.clientY }));
         }
         catch { /* Invalid foreign drag payload is ignored. */ }
     } }}>
-  <ReactFlow<FlowNode> key={board.id} nodes={nodes} edges={edges} nodeTypes={nodeTypes} viewport={board.viewport} onInit={setFlow} onNodesChange={changes} onNodeDragStart={() => store.beginGesture()} onNodeDragStop={() => store.endGesture()} onViewportChange={v => store.setViewport(v)} onConnect={c => { if (c.source && c.target)
+  <ReactFlow<FlowNode> key={board.id} colorMode={mode} nodes={nodes} edges={edges} nodeTypes={nodeTypes} viewport={board.viewport} onInit={setFlow} onNodesChange={changes} onNodeDragStart={() => store.beginGesture()} onNodeDragStop={() => store.endGesture()} onViewportChange={v => store.setViewport(v)} onConnect={c => { if (c.source && c.target)
         store.connect(c.source, c.target); }} onPaneClick={() => store.ui({ selected: [], selectedEdge: null })} onEdgeClick={(_, e) => store.ui({ selectedEdge: e.id, selected: [], panel: 'inspect' })} onNodeDoubleClick={(_, n) => store.ui({ selected: [n.id], selectedEdge: null, panel: 'inspect', mobilePanel: window.innerWidth < 1000 ? 'lab' : 'none' })} onNodeClick={(_, n) => { if (state.tool === 'connect') {
         if (connecting.current && connecting.current !== n.id) {
             store.connect(connecting.current, n.id);
@@ -70,11 +72,11 @@ function BoardInner() {
             store.ui({ selected: [n.id] });
         }
     } }} minZoom={0.15} maxZoom={2.5} panOnScroll panOnDrag={state.tool === 'pan' ? [0, 1, 2] : [1, 2]} selectionOnDrag={state.tool === 'select'} selectionMode={SelectionMode.Partial} multiSelectionKeyCode="Shift" deleteKeyCode={null} nodesConnectable nodesDraggable={state.tool !== 'pan'} zoomOnDoubleClick={false} aria-label="素材カードの接続と配置">
-   <MiniMap position="bottom-right" style={{ width: 115, height: 73, bottom: 45 }} nodeColor={n => n.data.kind === 'idea' ? '#edcfb7' : n.data.kind === 'note' ? '#f1e2a8' : '#ded7ef'} maskColor="#f8f6fc99" pannable zoomable/>
+   <MiniMap position="bottom-right" style={{ width: 115, height: 73, bottom: 45 }} nodeColor={n => n.data.kind === 'idea' ? (dark ? '#6b4a33' : '#edcfb7') : n.data.kind === 'note' ? (dark ? '#5b4f1c' : '#f1e2a8') : (dark ? '#463f5c' : '#ded7ef')} maskColor={dark ? '#0d0d1299' : '#f8f6fc99'} pannable zoomable/>
   </ReactFlow></div>
   {!board.nodes.length && <div className="empty-board"><Icon name="flask"/><h3>まだない遊びを、ここから。</h3><p>リボンで素材を選んで追加。<br />タグとメカニクスをつないでみよう。</p></div>}
   {state.selected.length > 0 && <div className="selection-actions"><span>{state.selected.length} 枚選択</span><button className="btn small" onClick={() => store.mixSelected()}><Icon name="flask"/>素材にする</button><button className="icon-btn" title="複製" aria-label="選択カードを複製" onClick={() => store.duplicateSelected()}><Icon name="copy"/></button><button className="icon-btn" title="削除" aria-label="選択カードを削除" onClick={() => store.deleteSelected()}><Icon name="trash"/></button></div>}
-  <div className="board-tools" role="toolbar" aria-label="ホワイトボードのツール"><Tool name="pointer" label="選択 (V)" active={state.tool === 'select'} onClick={() => store.ui({ tool: 'select' })}/><Tool name="hand" label="移動 (H)" active={state.tool === 'pan'} onClick={() => store.ui({ tool: 'pan' })}/><div className="tool-divider"/><Tool name="note" label="付箋を追加 (N)" onClick={() => store.addNote(center())}/><Tool name="link" label="接続：2枚を順にクリック" active={state.tool === 'connect'} onClick={() => { connecting.current = null; store.ui({ tool: 'connect', selected: [] }); }}/><Tool name="frame" label="選択を比較フレームで囲む" onClick={() => store.frameSelection()}/><Tool name="grid" label="カードを整列" onClick={() => store.arrange()} secondary/><div className="tool-divider"/><Tool name="undo" label="元に戻す (Ctrl/⌘ Z)" disabled={!state.canUndo} onClick={() => store.undo()}/><Tool name="redo" label="やり直す (Ctrl/⌘ Shift Z)" disabled={!state.canRedo} onClick={() => store.redo()} secondary/></div>
+  <div className="board-tools" role="toolbar" aria-label="ホワイトボードのツール"><Tool name="pointer" label="選択 (V)" active={state.tool === 'select'} onClick={() => store.ui({ tool: 'select' })}/><Tool name="hand" label="移動 (H)" active={state.tool === 'pan'} onClick={() => store.ui({ tool: 'pan' })}/><div className="tool-divider"/><Tool name="note" label="付箋を追加 (N)" onClick={() => store.addNote(center())}/><Tool name="link" label="接続：2枚を順にクリック" active={state.tool === 'connect'} onClick={() => { connecting.current = null; store.ui({ tool: 'connect', selected: [] }); }}/><Tool name="frame" label="選択を比較フレームで囲む" onClick={() => store.frameSelection()}/><Tool name="grid" label="カードを整列" onClick={() => store.arrange()} secondary/><Tool name="spark" label="カイヨワの遊びの地図" active={state.panel === 'play'} onClick={() => store.ui({ panel: 'play', mobilePanel: window.innerWidth < 1000 ? 'lab' : state.mobilePanel })}/><div className="tool-divider"/><Tool name="undo" label="元に戻す (Ctrl/⌘ Z)" disabled={!state.canUndo} onClick={() => store.undo()}/><Tool name="redo" label="やり直す (Ctrl/⌘ Shift Z)" disabled={!state.canRedo} onClick={() => store.redo()} secondary/></div>
   <div className="zoom-controls"><Tool name="minus" label="縮小" onClick={() => flow?.zoomOut()}/><span className="zoom-value">{Math.round(board.viewport.zoom * 100)}%</span><Tool name="plus" label="拡大" onClick={() => flow?.zoomIn()}/><Tool name="fit" label="全体を表示" onClick={() => flow?.fitView({ padding: .18, duration: 250 })}/></div>
  </section>;
 }
