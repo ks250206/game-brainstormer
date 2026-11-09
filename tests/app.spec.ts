@@ -14,7 +14,7 @@ test('hydrates the generated application and creates a real React Flow canvas', 
 test('tag/ID search, add, undo and redo', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.react-flow')).toBeVisible();
-    await page.getByRole('button', { name: /すべて 429/ }).click();
+    await page.getByRole('button', { name: /^すべて\s*429$/ }).click();
     await expect(page.locator('.library-item')).toHaveCount(429);
     await page.getByRole('button', { name: 'メカニクス 203' }).click();
     await page.getByRole('searchbox', { name: '素材を検索' }).fill('ECO-07');
