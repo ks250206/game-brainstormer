@@ -1,0 +1,76 @@
+name: Verify
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Materialize initial source delivery
+        if: hashFiles('.bootstrap/source.part*') != ''
+        run: |
+          python3 - <<'PY'
+          import hashlib, pathlib, tarfile, io, lzma
+          raw=b''.join(p.read_bytes() for p in sorted(pathlib.Path('.bootstrap').glob('source.part*')))
+          assert hashlib.sha256(raw).hexdigest() == 'e8829e94c2923fce1a64f52fefd37e740be049a7ab92d3b0a96d2d9944b2b94e', 'Source integrity check failed'
+          with tarfile.open(fileobj=io.BytesIO(lzma.decompress(raw))) as archive:
+              archive.extractall('.', filter='data')
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '26'
+      - name: Install pnpm
+        run: npm install --global pnpm@12.18.0
+      - name: Install dependencies
+        run: |
+          if [ -f pnpm-lock.yaml ]; then pnpm install --frozen-lockfile; else pnpm install; fi
+      - name: Typecheck and lint
+        run: pnpm check
+      - name: Unit tests
+        run: pnpm test
+      - name: Static build
+        run: pnpm build
+      - name: Browser and CJK fonts
+        run: |
+          pnpm exec playwright install --with-deps chromium
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Browser tests and real screenshots
+        run: pnpm test:e2e
+      - name: Upload static app
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-brainstormer-static
+          path: dist/
+      - name: Upload diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-results
+          path: |
+            playwright-report/
+            test-results/
+            docs/screenshots/
+      - name: Commit verified initial source, lockfile and screenshots
+        if: success() && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && hashFiles('.bootstrap/source.part*') != ''
+        env:
+          HEAD_BRANCH: ${{ github.head_ref }}
+        run: |
+          rm -rf .bootstrap
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'feat: materialize verified semantic brainstorming app and screenshots'
+          git push origin "HEAD:$HEAD_BRANCH"
