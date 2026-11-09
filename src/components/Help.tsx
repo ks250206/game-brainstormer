@@ -1,7 +1,7 @@
 import { useState, type CSSProperties, type ReactNode } from 'react';
 import { Popover } from '@astryxdesign/core/Popover';
 import type { Cluster, Material } from '../core/types.ts';
-import { PLAY_TYPES, dominant, playInfo } from '../core/caillois.ts';
+import { PLAY_TYPES, playInfo, strongElements, totalWeight } from '../core/caillois.ts';
 import { useWorkbench } from './context.tsx';
 import { Icon } from './Icons.tsx';
 
@@ -25,7 +25,7 @@ export function HelpPopover({ label, placement = 'end', width = 320, className =
 export function PlayBars({ weights }: {
     weights: Material['play'];
 }) {
-    return <div className="play-bars" aria-label="カイヨワの遊びの4分類（編集上の目安）">{PLAY_TYPES.map(p => <div key={p.id} className="play-bar" style={{ '--play-color': p.color } as CSSProperties}><span>{p.label}<small>{p.meaning}</small></span><span className="play-track" aria-hidden="true"><span style={{ width: `${(weights[p.id] / 3) * 100}%` }}/></span><b>{weights[p.id]}</b></div>)}</div>;
+    return <div className="play-bars" aria-label="カイヨワの遊びの4要素（それぞれ独立した0〜3の目安）">{PLAY_TYPES.map(p => <div key={p.id} className="play-bar" style={{ '--play-color': p.color } as CSSProperties}><span>{p.label}<small>{p.meaning}</small></span><span className="play-track" aria-hidden="true"><span style={{ width: `${(weights[p.id] / 3) * 100}%` }}/></span><b>{weights[p.id]}</b></div>)}</div>;
 }
 export function MaterialDetails({ m }: {
     m: Material;
@@ -34,7 +34,7 @@ export function MaterialDetails({ m }: {
     const primary = catalog.clusters.find(c => c.id === m.primaryCluster);
     const sub = primary?.subgroups.find(s => s.id === m.subgroup);
     const others = m.clusters.filter(c => c !== m.primaryCluster).map(c => catalog.clusters.find(x => x.id === c)?.label).filter(Boolean);
-    const dom = dominant(m.play);
+    const strong = strongElements(m.play);
     return <>
         <div className="help-pop-head"><span className={`material-glyph ${m.kind}`}><Icon name={m.kind === 'tag' ? 'tag' : 'book'}/></span><div><div className="section-eyebrow">{m.kind === 'tag' ? `STEAM TAG #${m.rank}` : `${m.id} · ${m.chapter}`}</div><h3>{m.label}</h3></div></div>
         <div className="help-pop-body">
@@ -43,7 +43,7 @@ export function MaterialDetails({ m }: {
                 <dt>分類</dt><dd>{primary?.label}{m.kind === 'tag' && sub ? ` › ${sub.label}` : ''}{others.length ? <small> ／ 関連: {others.join('・')}</small> : null}</dd>
                 <dt>代表例</dt><dd>{m.examples.length ? <ul className="example-list">{m.examples.map(e => <li key={e}>{e}</li>)}</ul> : <span className="muted-text">記載なし</span>}</dd>
                 {m.kind === 'mechanic' && <><dt>応用案</dt><dd>{m.description}</dd></>}
-                <dt>遊びの型</dt><dd>{dom ? <>{playInfo(dom).label}（{playInfo(dom).meaning}）寄り<PlayBars weights={m.play}/></> : <span className="muted-text">遊びの型には直接影響しない素材</span>}</dd>
+                <dt>遊びの要素</dt><dd>{totalWeight(m.play) ? <>{strong.length ? `強い要素：${strong.map(t => playInfo(t).label).join('・')}` : '強い要素なし'}<PlayBars weights={m.play}/></> : <span className="muted-text">遊びの要素には直接影響しない素材</span>}</dd>
             </dl>
             <p className="help-note">説明・代表例・遊びの型はこのアプリの編集注釈です。{m.kind === 'tag' ? 'Steam公式の定義やランキングではありません。' : '書籍本文の定義の転載ではありません。'}<a href={m.source} target="_blank" rel="noreferrer">出典 ↗</a></p>
         </div>

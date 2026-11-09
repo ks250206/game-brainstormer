@@ -104,22 +104,28 @@ test('help popovers explain tags, mechanics and categories with representative w
     await expect(cluster.getByText('どんな計画と読み合いをさせる？')).toBeVisible();
     await expect(cluster.getByText(/戦術・部隊/)).toBeVisible();
 });
-test('component 1: Caillois map shows four categories from paidia to ludus and suggests from gaps', async ({ page }) => {
+test('component 1: Caillois map shows four independent elements and the paidia–ludus scale', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.react-flow')).toBeVisible();
     await page.getByRole('button', { name: 'カイヨワの遊びの地図' }).click();
     const map = page.getByRole('group', { name: /カイヨワの遊びの地図/ });
     await expect(map).toBeVisible();
-    for (const label of ['アゴン', 'アレア', 'ミミクリ', 'イリンクス', 'パイディア', 'ルドゥス'])
+    for (const label of ['アゴン', 'アレア', 'ミミクリ', 'イリンクス', '遊び方'])
         await expect(map.getByText(label, { exact: true })).toBeVisible();
-    await expect(page.locator('.play-point.main')).toHaveCount(5);
-    await page.locator('.play-point.main.idea').click();
-    await expect(page.locator('.play-selected')).toContainText('アゴン（競争）が中心');
-    await page.getByRole('radio', { name: 'ミミクリ' }).click();
+    await expect(page.getByText('相反する分類ではなく、同時に含まれうる独立した性質')).toBeVisible();
+    // Every card is drawn on all four element scales plus the paidia–ludus scale.
+    await expect(page.locator('.play-point')).toHaveCount(5);
+    await expect(page.locator('.play-point').first().locator('.mark')).toHaveCount(5);
+    await page.locator('.play-point.idea').focus();
+    await page.keyboard.press('Enter');
+    await expect(page.locator('.play-profile-line')).toHaveCount(1);
+    await expect(page.locator('.play-selected')).toContainText('強い要素：');
+    await expect(page.locator('.play-pairs li')).toHaveCount(6);
+    await page.getByRole('radio', { name: 'イリンクス' }).click();
     await page.getByRole('radio', { name: 'パイディア寄り' }).click();
     await page.locator('.suggestion-row .item-add').first().click();
     await expect(page.locator('.react-flow__node')).toHaveCount(7);
-    await expect(page.locator('.play-point.main')).toHaveCount(6);
+    await expect(page.locator('.play-point')).toHaveCount(6);
     await expect(page.locator('.quad-plane')).toHaveCount(0);
 });
 test('component 2: two-axis map places cards by hand, edits axes and saves per board', async ({ page }) => {

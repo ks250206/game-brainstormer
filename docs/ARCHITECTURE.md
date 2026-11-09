@@ -48,12 +48,14 @@ tag or mechanic is missing or malformed.
 
 They answer different questions and share no position data.
 
-**1. Caillois map (`src/core/caillois.ts`, `PlayMap.tsx`).** Caillois' own table: four
-category columns (agon, alea, mimicry, ilinx), each from paidia (top) to ludus (bottom).
-Positions are derived only from catalog data — `play` weights pick the columns, `ludus`
-(0-3, `data/editorial/ludus.psv`) the height; a hypothesis sums its materials and uses a
-weight-averaged ludus. The core computes shares, per-column ludus averages, gaps (<12%)
-and deterministic suggestions (optionally nearer paidia or ludus). Nothing is stored.
+**1. Caillois map (`src/core/caillois.ts`, `PlayMap.tsx`).** Agon, alea, mimicry and ilinx
+are treated as four independent 0-3 intensities, not exclusive classes or opposite poles:
+every card is drawn on all four scales at once, plus a separate paidia ↔ ludus scale
+(`ludus`, `data/editorial/ludus.psv`). A hypothesis averages its materials. The core
+computes per-element board averages, how many cards clearly contain each element, the
+six pairwise co-occurrences (with Caillois' own notes on each pairing), weak elements
+(average < 1) and deterministic suggestions that add an element without requiring it to
+be the only one. Positions come from catalog data only; nothing is stored.
 
 **2. Two-axis, four-quadrant map (`src/core/quadrant.ts`, `QuadrantMap.tsx`).** A
 general positioning map shown in place of the whiteboard (`UIState.view`). The designer
