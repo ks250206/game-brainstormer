@@ -44,16 +44,32 @@ Editorial notes in `data/editorial/*.psv` add a summary, illustrative works and 
 weights (`play`: agon/alea/mimicry/ilinx, 0-3) to every material; generation fails if any
 tag or mechanic is missing or malformed.
 
-## Caillois play map
+## Two separate map components
 
-`src/core/caillois.ts` is pure TypeScript. It maps weights to two axes
-(x: will/control → surrender, y: make-believe/sensation → rules), derives card positions
-(materials from the catalog, hypotheses from the sum of their materials), computes the
-board's share per category, centroid and gaps (<12%), and returns deterministic
-suggestions. The React `PlayMap` component only renders and edits; overlapping points are
-spread for display without changing data. Idea and note cards may store an optional
-pinned `data.play` point; it is additive to schemaVersion 1, validated to [-1, 1] on
-import and rejected on material/frame cards.
+They answer different questions and share no position data.
+
+**1. Caillois map (`src/core/caillois.ts`, `PlayMap.tsx`).** Caillois' own table: four
+category columns (agon, alea, mimicry, ilinx), each from paidia (top) to ludus (bottom).
+Positions are derived only from catalog data — `play` weights pick the columns, `ludus`
+(0-3, `data/editorial/ludus.psv`) the height; a hypothesis sums its materials and uses a
+weight-averaged ludus. The core computes shares, per-column ludus averages, gaps (<12%)
+and deterministic suggestions (optionally nearer paidia or ludus). Nothing is stored.
+
+**2. Two-axis, four-quadrant map (`src/core/quadrant.ts`, `QuadrantMap.tsx`).** A
+general positioning map shown in place of the whiteboard (`UIState.view`). The designer
+picks axis labels and quadrant names (presets or custom) and places cards by hand.
+Stored per board as optional `board.quadrant` (`preset`, `x`, `y`, `names[4]`,
+`positions{nodeId: {x,y}}` in [-1, 1]); additive to schemaVersion 1, validated on import
+(known non-frame cards only, finite ranges, four names), pruned when cards are deleted,
+undoable, and listed per quadrant in the Markdown export. Nothing is inferred from data.
+
+## Cascade layers
+
+Astryx ships its CSS in `@layer reset, astryx-base, astryx-theme`. Unlayered rules beat
+every layer, so the app's element resets (`button`, `input`, `a`…) live in
+`@layer reset`; app-specific classes stay unlayered. Without this, an unlayered
+`button{background:none}` erased Astryx's primary Button fill and SegmentedControl
+selection.
 
 ## Theme
 

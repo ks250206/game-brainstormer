@@ -2,223 +2,223 @@ TAP version 13
 # Subtest: full corpus: 429 tags, 203 mechanics, 500 pairs and 45 concepts
 ok 1 - full corpus: 429 tags, 203 mechanics, 500 pairs and 45 concepts
   ---
-  duration_ms: 1.925017
+  duration_ms: 1.367092
   type: 'test'
   ...
 # Subtest: every material has a valid primary and multi-label semantic classification
 ok 2 - every material has a valid primary and multi-label semantic classification
   ---
-  duration_ms: 1.184795
+  duration_ms: 0.906658
   type: 'test'
   ...
 # Subtest: stable unique IDs and continuous source ranks
 ok 3 - stable unique IDs and continuous source ranks
   ---
-  duration_ms: 1.378699
+  duration_ms: 1.287512
   type: 'test'
   ...
 # Subtest: all pair and concept references resolve, and all 203 mechanics have examples
 ok 4 - all pair and concept references resolve, and all 203 mechanics have examples
   ---
-  duration_ms: 1.721218
+  duration_ms: 1.582125
   type: 'test'
   ...
 # Subtest: English search is case insensitive and normalized
 ok 5 - English search is case insensitive and normalized
   ---
-  duration_ms: 3.158506
+  duration_ms: 3.235933
   type: 'test'
   ...
 # Subtest: Japanese alias, ID, chapter and favorites filters work
 ok 6 - Japanese alias, ID, chapter and favorites filters work
   ---
-  duration_ms: 1.412161
+  duration_ms: 1.530697
   type: 'test'
   ...
 # Subtest: secondary classifications are searchable, not only primary labels
 ok 7 - secondary classifications are searchable, not only primary labels
   ---
-  duration_ms: 0.252931
+  duration_ms: 0.277858
   type: 'test'
   ...
 # Subtest: initial board is a valid deterministic document
 ok 8 - initial board is a valid deterministic document
   ---
-  duration_ms: 3.964165
+  duration_ms: 4.360343
   type: 'test'
   ...
 # Subtest: hypotheses require both a tag and a mechanic
 ok 9 - hypotheses require both a tag and a mechanic
   ---
-  duration_ms: 0.378433
+  duration_ms: 0.556346
   type: 'test'
   ...
 # Subtest: all five operators produce editable hypotheses with test and risk
 ok 10 - all five operators produce editable hypotheses with test and risk
   ---
-  duration_ms: 1.058248
+  duration_ms: 0.987179
   type: 'test'
   ...
 # Subtest: non-platformer base does not inherit a curated platformer example
 ok 11 - non-platformer base does not inherit a curated platformer example
   ---
-  duration_ms: 0.359589
+  duration_ms: 0.446524
   type: 'test'
   ...
 # Subtest: discovery chooses valid, different, unselected semantic material
 ok 12 - discovery chooses valid, different, unselected semantic material
   ---
-  duration_ms: 0.664802
+  duration_ms: 0.638534
   type: 'test'
   ...
 # Subtest: add, undo and redo preserve exact board content
 ok 13 - add, undo and redo preserve exact board content
   ---
-  duration_ms: 1.412918
+  duration_ms: 1.33204
   type: 'test'
   ...
 # Subtest: drag positions form one undo transaction
 ok 14 - drag positions form one undo transaction
   ---
-  duration_ms: 0.434764
+  duration_ms: 0.644317
   type: 'test'
   ...
 # Subtest: connections reject self links, missing nodes and duplicate links
 ok 15 - connections reject self links, missing nodes and duplicate links
   ---
-  duration_ms: 0.347027
+  duration_ms: 0.367939
   type: 'test'
   ...
 # Subtest: deleting a card deletes all incident edges and undo restores both
 ok 16 - deleting a card deletes all incident edges and undo restores both
   ---
-  duration_ms: 0.32405
+  duration_ms: 0.437796
   type: 'test'
   ...
 # Subtest: duplicating a selection remaps internal edge endpoints
 ok 17 - duplicating a selection remaps internal edge endpoints
   ---
-  duration_ms: 0.414534
+  duration_ms: 0.31431
   type: 'test'
   ...
 # Subtest: frames contain selected nodes visually and can be undone
 ok 18 - frames contain selected nodes visually and can be undone
   ---
-  duration_ms: 0.351977
+  duration_ms: 0.413477
   type: 'test'
   ...
 # Subtest: creating, switching, renaming boards keeps previous work
 ok 19 - creating, switching, renaming boards keeps previous work
   ---
-  duration_ms: 0.279985
+  duration_ms: 0.348908
   type: 'test'
   ...
 # Subtest: JSON import is additive, uses unique board IDs and is undoable
 ok 20 - JSON import is additive, uses unique board IDs and is undoable
   ---
-  duration_ms: 0.603562
+  duration_ms: 0.624196
   type: 'test'
   ...
 # Subtest: save and restore round-trip using the Storage contract
 ok 21 - save and restore round-trip using the Storage contract
   ---
-  duration_ms: 0.597523
+  duration_ms: 0.574378
   type: 'test'
   ...
 # Subtest: corrupt saved data is not overwritten by restore
 ok 22 - corrupt saved data is not overwritten by restore
   ---
-  duration_ms: 0.305712
+  duration_ms: 0.381613
   type: 'test'
   ...
 # Subtest: recipe saves operator, materials and base and restores them
 ok 23 - recipe saves operator, materials and base and restores them
   ---
-  duration_ms: 0.257198
+  duration_ms: 0.318856
   type: 'test'
   ...
 # Subtest: imports reject unsupported version, unknown material, duplicate and dangling IDs
 ok 24 - imports reject unsupported version, unknown material, duplicate and dangling IDs
   ---
-  duration_ms: 0.4724
+  duration_ms: 0.510869
   type: 'test'
   ...
 # Subtest: imports reject hostile dimensions, invalid enum and oversized input
 ok 25 - imports reject hostile dimensions, invalid enum and oversized input
   ---
-  duration_ms: 5.408596
+  duration_ms: 5.731238
   type: 'test'
   ...
 # Subtest: SVG escapes text and never interpolates imported markup as HTML
 ok 26 - SVG escapes text and never interpolates imported markup as HTML
   ---
-  duration_ms: 0.806017
+  duration_ms: 1.052828
   type: 'test'
   ...
 # Subtest: Markdown contains playable rules, examples, risks and relations
 ok 27 - Markdown contains playable rules, examples, risks and relations
   ---
-  duration_ms: 0.269386
+  duration_ms: 0.445046
   type: 'test'
   ...
 # Subtest: unknown materials cannot be instantiated
 ok 28 - unknown materials cannot be instantiated
   ---
-  duration_ms: 0.072089
+  duration_ms: 0.090268
   type: 'test'
   ...
 # Subtest: designer taxonomy: every cluster states a design question and every subgroup is used
 ok 29 - designer taxonomy: every cluster states a design question and every subgroup is used
   ---
-  duration_ms: 0.668203
+  duration_ms: 0.696598
   type: 'test'
   ...
 # Subtest: editorial help notes cover every tag and mechanic with valid play weights
 ok 30 - editorial help notes cover every tag and mechanic with valid play weights
   ---
-  duration_ms: 1.669851
+  duration_ms: 2.0035
   type: 'test'
   ...
-# Subtest: Caillois axes place the four pure categories in their own quadrants
-ok 31 - Caillois axes place the four pure categories in their own quadrants
+# Subtest: Caillois: every material has a ludus degree and plausible dominant categories
+ok 31 - Caillois: every material has a ludus degree and plausible dominant categories
   ---
-  duration_ms: 0.320803
+  duration_ms: 0.550111
   type: 'test'
   ...
-# Subtest: catalog weights produce designer-plausible quadrants
-ok 32 - catalog weights produce designer-plausible quadrants
+# Subtest: Caillois profile: shares sum to 1, hypotheses inherit their materials, notes are excluded
+ok 32 - Caillois profile: shares sum to 1, hypotheses inherit their materials, notes are excluded
   ---
-  duration_ms: 0.23832
+  duration_ms: 0.976301
   type: 'test'
   ...
-# Subtest: board play profile sums shares, finds gaps and honours pinned cards
-ok 33 - board play profile sums shares, finds gaps and honours pinned cards
+# Subtest: Caillois suggestions are deterministic, unused, match the category and can prefer paidia or ludus
+ok 33 - Caillois suggestions are deterministic, unused, match the category and can prefer paidia or ludus
   ---
-  duration_ms: 0.992612
+  duration_ms: 13.160562
   type: 'test'
   ...
-# Subtest: material cards cannot be pinned and pinned positions are clamped
-ok 34 - material cards cannot be pinned and pinned positions are clamped
+# Subtest: Quadrant map: quadrant order, meanings and presets
+ok 34 - Quadrant map: quadrant order, meanings and presets
   ---
-  duration_ms: 0.382165
+  duration_ms: 0.441747
   type: 'test'
   ...
-# Subtest: play suggestions are deterministic, unused and match the requested category
-ok 35 - play suggestions are deterministic, unused and match the requested category
+# Subtest: Quadrant map: placing, moving, clamping, removing and undo; Caillois data is not used
+ok 35 - Quadrant map: placing, moving, clamping, removing and undo; Caillois data is not used
   ---
-  duration_ms: 9.091346
+  duration_ms: 0.851124
   type: 'test'
   ...
-# Subtest: documents without play positions still import; invalid play positions are rejected
-ok 36 - documents without play positions still import; invalid play positions are rejected
+# Subtest: Quadrant map: presets keep positions; custom labels switch to the custom preset
+ok 36 - Quadrant map: presets keep positions; custom labels switch to the custom preset
   ---
-  duration_ms: 0.874631
+  duration_ms: 0.665094
   type: 'test'
   ...
-# Subtest: hand-placed weights stay in range
-ok 37 - hand-placed weights stay in range
+# Subtest: Quadrant map: import validation and Markdown export
+ok 37 - Quadrant map: import validation and Markdown export
   ---
-  duration_ms: 0.156076
+  duration_ms: 2.097375
   type: 'test'
   ...
 1..37
@@ -229,4 +229,4 @@ ok 37 - hand-placed weights stay in range
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 201.417963
+# duration_ms 214.1058

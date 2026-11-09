@@ -1,18 +1,17 @@
 # 検証記録 — 2026-11-09
 
-## 機能追加（テーマ・説明ポップアップ・11分類・カイヨワの遊びの地図）
+## 機能追加（テーマ・説明ポップアップ・11分類・カイヨワの遊びの地図・二軸四象限マップ）
 
 Node 26.13.0 / pnpm 12.18.0（`pnpm install --frozen-lockfile`、依存の追加なし）で実行。
 - `pnpm typecheck`：成功。
-- `pnpm test`：37件すべて成功（[core-test-results.txt](core-test-results.txt)）。新規：分類の網羅、注釈の網羅と値域、カイヨワの軸・象限、ボードの比率と空白、提案の決定性、手動配置の検証・取り消し、旧JSONの互換。
-- `pnpm data:build`：429タグ・203メカニクスすべてが分類・注釈に1件ずつ対応することを生成時に検証。
-- `pnpm build`：クライアント・SSR・HTMLプリレンダーの全工程が成功。Astryx PopoverとSegmentedControlもSSR可能。
-- React版Playwright E2E：8件成功（既存5件＋テーマ切替と再読み込み後の保持、タグ／メカニクス／分類の説明ポップアップ、遊びの地図の表示・空白からの追加・キーボード配置・自動位置への復帰）。`tests/screenshots.spec.ts` の撮影2件も成功し、`docs/images/react-*.png` を生成。
+- `pnpm test`：37件すべて成功（[core-test-results.txt](core-test-results.txt)）。新規：分類の網羅、注釈の網羅と値域、規則性（パイディア↔ルドゥス）の網羅、カイヨワの比率・空白・仮説の合算・提案の決定性、四象限の象限判定・配置・クランプ・取り外し・Undo・カード削除時の掃除・プリセット切替・読み込み検証・Markdown出力、旧JSONの互換。
+- `pnpm data:build`：429タグ・203メカニクスすべてが分類・注釈・規則性に1件ずつ対応すること、未知キーがないことを生成時に検証。
+- `pnpm build`：クライアント・SSR・HTMLプリレンダーの全工程が成功。Astryx Popover・SegmentedControlもSSR可能。
+- React版Playwright E2E：9件成功（既存5件＋テーマ切替と再読み込み後の保持、説明ポップアップ、コンポーネント1：カイヨワの地図の表示と空白からの追加、コンポーネント2：二軸四象限マップのドラッグ配置・軸の編集・空白への付箋・Deleteでの取り外し・再読み込み後の保存）。`tests/screenshots.spec.ts` の撮影2件も成功し、`docs/images/react-*.png` を生成。
   - この環境ではプロジェクトのPlaywright 1.65用ブラウザを取得できないため、リポジトリ外の一時設定で起動ファイルだけを同梱済みChromiumに差し替えて実行。テスト内容と `playwright.config.ts` は変更していません。
 - ポータブル版 `tests/portable-smoke.py`：16項目すべて成功（分類タイル数の期待値を12に更新）。README用のポータブル版画像を再生成。
-- 手動確認：ライト／ダーク／OS追従、ドラッグによる手動配置（クリックだけでは固定されない）、Undo、390px幅でのポップアップとメニュー内テーマ切替。
-- 既知の既存事象：Astryx `Button variant="primary"`（「反応を試す」）の背景が透明に描画される。変更前のコミットでも同じであることを確認済みで、今回の変更範囲外。
-
+- 手動確認：ライト／ダーク／OS追従、390px幅（横はみ出しなし、切り替えとナビの重なりなし）、ポップアップ、二軸マップのドラッグ。
+- 修正した既存の不具合：Astryx `Button variant="primary"`（「反応を試す」）が透明に描画されていた。原因はアプリCSSのレイヤー外の要素リセット（`button{background:none}`）がAstryxの `@layer` を上書きしていたこと。要素リセットを `@layer reset` に移して解消し、SegmentedControlの選択表示も正常化。
 
 ## 公開準備での追加検証
 

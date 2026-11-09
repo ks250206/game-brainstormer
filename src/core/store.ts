@@ -1,4 +1,5 @@
-import type { Board, BoardNode, Catalog, Hypothesis, PlayPoint, Position, UIState, Viewport, Workspace } from './types.ts';
+import type { AxisLabels, Board, BoardNode, Catalog, Hypothesis, MapPoint, Position, QuadrantMap, UIState, Viewport, Workspace } from './types.ts';
+import { CUSTOM_PRESET, applyPreset, clampPoint, defaultQuadrant, prunePositions } from './quadrant.ts';
 import { uid, clone, initialWorkspace, blankBoard, makeMaterialNode, makeIdeaNode, material, bounds, parseWorkspace, STORAGE_KEY } from './engine.ts';
 export class WorkbenchStore {
     private state: UIState;
@@ -7,7 +8,7 @@ export class WorkbenchStore {
     private future: Workspace[] = [];
     private gesture: Workspace | null = null;
     readonly catalog: Catalog;
-    constructor(catalog: Catalog) { this.catalog = catalog; const workspace = initialWorkspace(catalog); const ids = workspace.boards[0]!.nodes.flatMap(n => n.data.materialId ? [n.data.materialId] : []); this.state = { workspace, selected: [], selectedEdge: null, tray: ids, baseId: ids[0]!, operator: 'translate', variant: 0, tab: 'tag', cluster: 'action', query: '', chapter: '', tool: 'select', panel: 'lab', mobilePanel: 'none', toast: '', canUndo: false, canRedo: false }; }
+    constructor(catalog: Catalog) { this.catalog = catalog; const workspace = initialWorkspace(catalog); const ids = workspace.boards[0]!.nodes.flatMap(n => n.data.materialId ? [n.data.materialId] : []); this.state = { workspace, selected: [], selectedEdge: null, tray: ids, baseId: ids[0]!, operator: 'translate', variant: 0, tab: 'tag', cluster: 'action', query: '', chapter: '', tool: 'select', panel: 'lab', view: 'board', mobilePanel: 'none', toast: '', canUndo: false, canRedo: false }; }
     getSnapshot = (): UIState => this.state;
     subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
     private emit() { this.state = { ...this.state, canUndo: this.past.length > 0, canRedo: this.future.length > 0 }; for (const l of this.listeners)
@@ -32,18 +33,22 @@ export class WorkbenchStore {
         this.future = [];
     } this.gesture = null; this.emit(); }
     addMaterial(id: string, position?: Position) { const n = makeMaterialNode(this.catalog, id, position ?? { x: 80 + (this.board().nodes.length % 4) * 55, y: 120 + (this.board().nodes.length % 5) * 55 }); this.updateBoard(b => ({ ...b, nodes: [...b.nodes, n] })); this.ui({ selected: [n.id], selectedEdge: null }); return n.id; }
-    addNote(position: Position = { x: 250, y: 180 }) { const n: BoardNode = { id: uid('note'), type: 'note', position, width: 270, height: 170, data: { title: 'ひとつの問い', body: 'この組み合わせで、プレイヤーの選択はどう変わる？', tone: 'yellow' } }; this.updateBoard(b => ({ ...b, nodes: [...b.nodes, n] })); this.ui({ selected: [n.id], selectedEdge: null, panel: 'inspect' }); }
+    addNote(position: Position = { x: 250, y: 180 }) { const n: BoardNode = { id: uid('note'), type: 'note', position, width: 270, height: 170, data: { title: 'ひとつの問い', body: 'この組み合わせで、プレイヤーの選択はどう変わる？', tone: 'yellow' } }; this.updateBoard(b => ({ ...b, nodes: [...b.nodes, n] })); this.ui({ selected: [n.id], selectedEdge: null, panel: 'inspect' }); return n.id; }
     addIdea(h: Hypothesis, position?: Position) { const b = this.board(), bb = bounds(b.nodes.filter(n => n.type !== 'frame')); const n = makeIdeaNode(h, position ?? { x: bb.x + bb.width + 100, y: bb.y + 50 }); const sources = b.nodes.filter(x => x.data.materialId && h.materials.includes(x.data.materialId)); this.updateBoard(b => ({ ...b, nodes: [...b.nodes, n], edges: [...b.edges, ...sources.map(s => ({ id: uid('edge'), source: s.id, target: n.id, label: '素材にする' }))] })); this.ui({ selected: [n.id], selectedEdge: null, panel: 'inspect', toast: '仮説をボードに追加しました' }); return n.id; }
     addConcept(id: string) { const c = this.catalog.concepts.find(x => x.id === id); if (!c)
         return; const bb = bounds(this.board().nodes); const baseId = this.catalog.materials.find(m => m.label === 'Precision Platformer')!.id; const hs: Hypothesis = { ...c, operator: 'translate', origin: '既存のブレスト例（精密プラットフォーマー向け）', baseId, question: c.novelty }; const x = bb.x + bb.width + 110, y = bb.y; const ns = c.materials.map((mid, i) => makeMaterialNode(this.catalog, mid, { x: x + Math.floor(i / 3) * 275, y: y + (i % 3) * 170 })); const idea = makeIdeaNode(hs, { x: x + Math.ceil(ns.length / 3) * 275 + 30, y: y + 80 }); this.updateBoard(b => ({ ...b, nodes: [...b.nodes, ...ns, idea], edges: [...b.edges, ...ns.map(s => ({ id: uid('edge'), source: s.id, target: idea.id, label: '融合する' }))] })); this.ui({ selected: [idea.id], panel: 'inspect', selectedEdge: null, toast: '先行ブレストを展開しました' }); }
     patchNode(id: string, patch: Partial<BoardNode['data']>) { this.updateBoard(b => ({ ...b, nodes: b.nodes.map(n => n.id === id ? { ...n, data: { ...n.data, ...patch } } : n) })); }
-    /** Pin an idea/note card on the Caillois map, or pass null to return to the derived position. */
-    pinPlay(id: string, point: PlayPoint | null) { const n = this.board().nodes.find(x => x.id === id); if (!n || (n.type !== 'idea' && n.type !== 'note'))
-        return; this.updateBoard(b => ({ ...b, nodes: b.nodes.map(x => { if (x.id !== id)
-            return x; const data = { ...x.data }; if (point)
-            data.play = { x: Math.max(-1, Math.min(1, point.x)), y: Math.max(-1, Math.min(1, point.y)) };
-        else
-            delete data.play; return { ...x, data }; }) })); }
+    /** Place a card on the board's two-axis map, or pass null to take it off the map. */
+    placeOnQuadrant(id: string, point: MapPoint | null) { const n = this.board().nodes.find(x => x.id === id); if (!n || n.type === 'frame')
+        return; this.updateBoard(b => { const map = b.quadrant ?? defaultQuadrant(); const positions = { ...map.positions }; if (point)
+        positions[id] = clampPoint(point);
+    else
+        delete positions[id]; return { ...b, quadrant: { ...map, positions } }; }); }
+    /** Change axis labels / quadrant names, or switch to a preset (cards keep their positions). */
+    setQuadrant(patch: { preset?: string; x?: AxisLabels; y?: AxisLabels; names?: QuadrantMap['names'] }) { this.updateBoard(b => { let map = b.quadrant ?? defaultQuadrant(); if (patch.preset && patch.preset !== CUSTOM_PRESET)
+        map = applyPreset(map, patch.preset);
+    else
+        map = { ...map, preset: CUSTOM_PRESET, ...(patch.x ? { x: patch.x } : {}), ...(patch.y ? { y: patch.y } : {}), ...(patch.names ? { names: patch.names } : {}) }; return { ...b, quadrant: map }; }); }
     moveNodes(positions: Record<string, Position>) { this.updateBoard(b => ({ ...b, nodes: b.nodes.map(n => positions[n.id] ? { ...n, position: positions[n.id]! } : n) }), false); }
     setViewport(viewport: Viewport) { this.updateBoard(b => ({ ...b, viewport }), false); }
     select(id: string, add = false) { const prev = this.state.selected; this.ui({ selected: add ? (prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]) : [id], selectedEdge: null }); }
@@ -51,7 +56,7 @@ export class WorkbenchStore {
         return; this.updateBoard(b => ({ ...b, edges: [...b.edges, { id: uid('edge'), source, target, label: '関係' }] })); }
     patchEdge(id: string, label: string) { this.updateBoard(b => ({ ...b, edges: b.edges.map(e => e.id === id ? { ...e, label: label.slice(0, 200) } : e) })); }
     deleteSelected() { const ids = this.state.selected, eid = this.state.selectedEdge; if (!ids.length && !eid)
-        return; this.updateBoard(b => ({ ...b, nodes: b.nodes.filter(n => !ids.includes(n.id)), edges: b.edges.filter(e => e.id !== eid && !ids.includes(e.source) && !ids.includes(e.target)) })); this.ui({ selected: [], selectedEdge: null }); }
+        return; this.updateBoard(b => prunePositions({ ...b, nodes: b.nodes.filter(n => !ids.includes(n.id)), edges: b.edges.filter(e => e.id !== eid && !ids.includes(e.source) && !ids.includes(e.target)) })); this.ui({ selected: [], selectedEdge: null }); }
     duplicateSelected() { const selection = this.board().nodes.filter(n => this.state.selected.includes(n.id)); if (!selection.length)
         return; const remap = new Map(selection.map(n => [n.id, uid(n.type)])); const ns = selection.map(n => ({ ...clone(n), id: remap.get(n.id)!, position: { x: n.position.x + 50, y: n.position.y + 50 } })); const es = this.board().edges.filter(e => remap.has(e.source) && remap.has(e.target)).map(e => ({ ...e, id: uid('edge'), source: remap.get(e.source)!, target: remap.get(e.target)! })); this.updateBoard(b => ({ ...b, nodes: [...b.nodes, ...ns], edges: [...b.edges, ...es] })); this.ui({ selected: ns.map(n => n.id) }); }
     frameSelection() { const ns = this.board().nodes.filter(n => this.state.selected.includes(n.id) && n.type !== 'frame'); if (!ns.length) {

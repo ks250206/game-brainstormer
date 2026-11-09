@@ -1,10 +1,10 @@
-/** A tiny, build-time bundler for our own four dependency-free modules only.
+/** A tiny, build-time bundler for our own dependency-free modules only.
  * Never use this to bundle arbitrary third-party code. TypeScript is the sole build dependency. */
 import fs from 'node:fs/promises';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url);
 const ts=require('typescript');
-const sources=['src/core/engine.ts','src/core/store.ts','src/core/icons.ts','src/portable.ts'];
+const sources=['src/core/quadrant.ts','src/core/engine.ts','src/core/store.ts','src/core/icons.ts','src/portable.ts'];
 const output=[];
 for(const path of sources){
  const source=await fs.readFile(path,'utf8');

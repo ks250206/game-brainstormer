@@ -4,10 +4,23 @@ export type Operator = 'translate' | 'constraint' | 'invert' | 'delay' | 'social
 export type Status = 'seed' | 'testing' | 'promising' | 'parked';
 export type PlayType = 'agon' | 'alea' | 'mimicry' | 'ilinx';
 export type PlayWeights = Record<PlayType, number>;
-/** A point on the Caillois map. x: -1 will/control … +1 surrender; y: -1 make-believe/sensation … +1 rules. */
-export interface PlayPoint {
+/** A point on a two-axis map, each coordinate in [-1, 1] (x: left → right, y: bottom → top). */
+export interface MapPoint {
     x: number;
     y: number;
+}
+export interface AxisLabels {
+    negative: string;
+    positive: string;
+}
+/** A user-defined positioning map for one board. Independent of the Caillois lens. */
+export interface QuadrantMap {
+    preset: string;
+    x: AxisLabels;
+    y: AxisLabels;
+    /** Quadrant names in order: top-right, top-left, bottom-left, bottom-right. */
+    names: [string, string, string, string];
+    positions: Record<string, MapPoint>;
 }
 export interface Cluster {
     id: string;
@@ -38,6 +51,8 @@ export interface Material {
     examples: string[];
     /** Editorial Caillois weights, 0-3 each. */
     play: PlayWeights;
+    /** Editorial paidia (0, free improvisation) ↔ ludus (3, codified rules) degree. */
+    ludus: number;
     rank?: number;
     chapter?: string;
     chapterCode?: string;
@@ -107,8 +122,6 @@ export interface BoardNode {
         tone: string;
         status?: Status;
         hypothesis?: Hypothesis;
-        /** Manually pinned position on the Caillois play map (idea/note cards). */
-        play?: PlayPoint;
         ratings?: {
             clarity: number;
             novelty: number;
@@ -134,6 +147,8 @@ export interface Board {
     edges: BoardEdge[];
     viewport: Viewport;
     updatedAt: string;
+    /** Optional two-axis positioning map (additive to schemaVersion 1). */
+    quadrant?: QuadrantMap;
 }
 export interface Recipe {
     id: string;
@@ -163,6 +178,7 @@ export interface UIState {
     chapter: string;
     tool: 'select' | 'pan' | 'connect';
     panel: 'lab' | 'inspect' | 'play';
+    view: 'board' | 'quadrant';
     mobilePanel: 'none' | 'library' | 'lab';
     toast: string;
     canUndo: boolean;

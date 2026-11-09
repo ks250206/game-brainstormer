@@ -29,6 +29,16 @@ def read_notes(name):
         if not summary: raise ValueError(f'{name}:{n}: empty summary')
         notes[key]=dict(play={k:int(v) for k,v in zip(PLAY_KEYS,play)},summary=summary,examples=[w.strip() for w in works.split(' / ') if w.strip()])
     return notes
+def read_ludus():
+    """Paidia (0) ↔ ludus (3) defaults per tag subgroup and for mechanics, with per-item overrides."""
+    out={}
+    for n,line in enumerate((EDITORIAL/'ludus.psv').read_text(encoding='utf-8').splitlines(),1):
+        if not line.strip() or line.startswith('#'): continue
+        key,_,value=line.partition('|')
+        if value.strip() not in ('0','1','2','3') or ':' not in key: raise ValueError(f'ludus.psv:{n}: expected <kind>:<key>|0-3')
+        if key in out: raise ValueError(f'ludus.psv:{n}: duplicate {key}')
+        out[key]=int(value)
+    return out
 # Clusters answer one design question each. Every tag is placed exactly once (primary);
 # secondary facets are listed separately and never invent new Steam tags.
 spec=[
@@ -120,12 +130,14 @@ secondary={
 for k,v in secondary.items():
     if k not in known: raise ValueError('Unknown secondary tag '+k)
     if any(c not in [x['id'] for x in clusters] for c in v): raise ValueError('Unknown cluster for '+k)
+ludus=read_ludus()
 tag_notes=read_notes('tag_notes.psv')
 if set(tag_notes)!=known: raise ValueError(f'Tag notes mismatch: missing {sorted(known-set(tag_notes))}, extra {sorted(set(tag_notes)-known)}')
 tags=[]
 for r in rows:
     cid,sid,label=assigned[r['tag']]; note=tag_notes[r['tag']]
-    tags.append(dict(id='tag:'+str(r['rank']),kind='tag',label=r['tag'],alias=aliases.get(r['tag'],''),primaryCluster=cid,clusters=list(dict.fromkeys([cid]+secondary.get(r['tag'],[]))),subgroup=sid,description=note['summary'],summary=note['summary'],examples=note['examples'],play=note['play'],rank=int(r['rank']),source=r['source_url']))
+    tags.append(dict(id='tag:'+str(r['rank']),kind='tag',label=r['tag'],alias=aliases.get(r['tag'],''),primaryCluster=cid,clusters=list(dict.fromkeys([cid]+secondary.get(r['tag'],[]))),subgroup=sid,description=note['summary'],summary=note['summary'],examples=note['examples'],play=note['play'],ludus=ludus.get('tag:'+r['tag'],ludus.get('subgroup:'+sid)),rank=int(r['rank']),source=r['source_url']))
+if any(t['ludus'] is None for t in tags): raise ValueError('Missing ludus default for subgroups '+repr(sorted({t['subgroup'] for t in tags if t['ludus'] is None})))
 # Mechanics keep their book chapter as subgroup; the cluster says which design question they serve.
 chapterCluster={'STR':'social','TRN':'structure','ACT':'strategy','RES':'strategy','VIC':'structure','UNC':'puzzle','ECO':'systems','AUC':'strategy','WPL':'strategy','MOV':'action','ARC':'strategy','SET':'progress','CAR':'strategy'}
 chapterSecondary={'STR':['structure'],'TRN':['strategy'],'ACT':['systems'],'VIC':['strategy'],'UNC':['strategy'],'ECO':['strategy'],'AUC':['systems','social'],'WPL':['systems'],'MOV':['strategy'],'ARC':['world'],'SET':['puzzle'],'CAR':['progress']}
@@ -142,7 +154,7 @@ mechs=[]
 for r in mech_rows:
     code=r['id'].split('-')[0]; cls=mechanicPrimary.get(r['id'],chapterCluster[code]); note=mech_notes[r['id']]
     cs=list(dict.fromkeys([cls,chapterCluster[code]]+chapterSecondary.get(code,[])+mechanicExtra.get(r['id'],[])))
-    mechs.append(dict(id=r['id'],kind='mechanic',label=r['name'],alias=r['chapter']+' '+r['id'],chapter=r['chapter'],chapterCode=code,primaryCluster=cls,clusters=cs,subgroup=code,description=r['idea'],summary=note['summary'],examples=note['examples'],play=note['play'],source='https://www.hanmoto.com/bd/isbn/9784798176741'))
+    mechs.append(dict(id=r['id'],kind='mechanic',label=r['name'],alias=r['chapter']+' '+r['id'],chapter=r['chapter'],chapterCode=code,primaryCluster=cls,clusters=cs,subgroup=code,description=r['idea'],summary=note['summary'],examples=note['examples'],play=note['play'],ludus=ludus.get('mechanic:'+r['id'],ludus['mechanic:*']),source='https://www.hanmoto.com/bd/isbn/9784798176741'))
 # Preserve supplied human/AI brainstorms without promoting numeric heuristics into measured quality scores.
 fusions=[]
 for r in read(FILES[2]):
@@ -151,8 +163,10 @@ concepts=[]
 for r in read(FILES[3]):
     nameToId={t['label']:t['id'] for t in tags}
     concepts.append(dict(id=r['id'],title=r['title'],materials=[nameToId[t.strip()] for t in r['tags'].split('/') if t.strip() in nameToId]+[t.strip() for t in r['mechanic_ids'].split('/')],rule=r['core'],example=r['example'],mvp=r['mvp'],risk=r['risk'],novelty=r['novelty']))
+known_keys={'mechanic:*'}|{'subgroup:'+sg['id'] for c in clusters for sg in c['subgroups']}|{'tag:'+t['label'] for t in tags}|{'mechanic:'+m['id'] for m in mechs}
+if set(ludus)-known_keys: raise ValueError('Unknown ludus keys '+repr(sorted(set(ludus)-known_keys)))
 chapters=list(dict.fromkeys(m['chapterCode'] for m in mechs))
-data=dict(schemaVersion=1,meta=dict(title='Game Brainstormer seed catalogue',snapshot='2026-10-11',prepared='2026-11-09',taxonomyRevised='2026-11-09',tagCount=len(tags),mechanicCount=len(mechs),fusionCount=len(fusions),conceptCount=len(concepts),classificationMethod='Editorial game-design taxonomy (one design question per cluster) with explicit multi-label facets; not an embedding model.',notesScope='summary, examples and play (Caillois agon/alea/mimicry/ilinx 0-3) are original editorial annotations in data/editorial; examples are illustrative, not rankings or market evidence.',rankMeaning='Supplied 2026-10-11 Steam tag frequency order; not live sales or player demand.',bookScope='Names, IDs and chapters from the supplied index; descriptions are original brainstorming examples, not reproduced book definitions.'),clusters=clusters,chapters=[dict(id=c,label=next(m['chapter'] for m in mechs if m['chapterCode']==c)) for c in chapters],materials=tags+mechs,fusions=fusions,concepts=concepts)
+data=dict(schemaVersion=1,meta=dict(title='Game Brainstormer seed catalogue',snapshot='2026-10-11',prepared='2026-11-09',taxonomyRevised='2026-11-09',tagCount=len(tags),mechanicCount=len(mechs),fusionCount=len(fusions),conceptCount=len(concepts),classificationMethod='Editorial game-design taxonomy (one design question per cluster) with explicit multi-label facets; not an embedding model.',notesScope='summary, examples, play (Caillois agon/alea/mimicry/ilinx 0-3) and ludus (paidia 0 to ludus 3) are original editorial annotations in data/editorial; examples are illustrative, not rankings or market evidence.',rankMeaning='Supplied 2026-10-11 Steam tag frequency order; not live sales or player demand.',bookScope='Names, IDs and chapters from the supplied index; descriptions are original brainstorming examples, not reproduced book definitions.'),clusters=clusters,chapters=[dict(id=c,label=next(m['chapter'] for m in mechs if m['chapterCode']==c)) for c in chapters],materials=tags+mechs,fusions=fusions,concepts=concepts)
 for p in [ROOT/'src/data/catalog.json',ROOT/'public/catalog.json']:
     p.write_text(json.dumps(data,ensure_ascii=False,separators=(',',':')),encoding='utf-8')
 report={c['label']:sum(m['primaryCluster']==c['id'] for m in tags) for c in clusters}
