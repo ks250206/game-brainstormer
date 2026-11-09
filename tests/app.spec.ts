@@ -104,19 +104,20 @@ test('help popovers explain tags, mechanics and categories with representative w
     await expect(cluster.getByText('どんな計画と読み合いをさせる？')).toBeVisible();
     await expect(cluster.getByText(/戦術・部隊/)).toBeVisible();
 });
-test('component 1: Caillois map shows four independent elements and the paidia–ludus scale', async ({ page }) => {
+test('component 1: Caillois map lays out four columns from paidia to ludus with independent elements', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.react-flow')).toBeVisible();
     await page.getByRole('button', { name: 'カイヨワの遊びの地図' }).click();
     const map = page.getByRole('group', { name: /カイヨワの遊びの地図/ });
     await expect(map).toBeVisible();
-    for (const label of ['アゴン', 'アレア', 'ミミクリ', 'イリンクス', '遊び方'])
+    for (const label of ['アゴン', 'アレア', 'ミミクリ', 'イリンクス', 'パイディア', 'ルドゥス'])
         await expect(map.getByText(label, { exact: true })).toBeVisible();
-    await expect(page.getByText('相反する分類ではなく、同時に含まれうる独立した性質')).toBeVisible();
-    // Every card is drawn on all four element scales plus the paidia–ludus scale.
+    await expect(page.getByText('相反せず同時に含まれうる')).toBeVisible();
     await expect(page.locator('.play-point')).toHaveCount(5);
-    await expect(page.locator('.play-point').first().locator('.mark')).toHaveCount(5);
-    await page.locator('.play-point.idea').focus();
+    // The hypothesis mixes several elements, so it appears in more than one column at once.
+    const idea = page.locator('.play-point.idea');
+    expect(await idea.locator('.mark').count()).toBeGreaterThan(1);
+    await idea.focus();
     await page.keyboard.press('Enter');
     await expect(page.locator('.play-profile-line')).toHaveCount(1);
     await expect(page.locator('.play-selected')).toContainText('強い要素：');

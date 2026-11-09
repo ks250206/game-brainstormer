@@ -102,6 +102,8 @@ export interface PlayProfile {
     present: PlayWeights;
     /** Average paidia (0) … ludus (3) across cards, null when the board has no play cards. */
     ludus: number | null;
+    /** Per element, the paidia–ludus average of the cards that contain it (weighted by intensity). */
+    ludusBy: Record<PlayType, number | null>;
     /** Elements whose board average is below `weakBelow`, weakest first. */
     weak: PlayType[];
     /** For every pair of elements, how many cards are clearly strong in both at once. */
@@ -115,7 +117,8 @@ export function playProfile(c: Catalog, board: Board, weakBelow = 1): PlayProfil
     const present = Object.fromEntries(PLAY_TYPES.map(p => [p.id, items.filter(i => i.weights[p.id] >= 2).length])) as PlayWeights;
     const weak = n ? PLAY_TYPES.filter(p => level[p.id] < weakBelow).sort((a, b) => level[a.id] - level[b.id]).map(p => p.id) : [];
     const pairs = PLAY_PAIRS.map(({ a, b }) => ({ a, b, count: items.filter(i => i.weights[a] >= 2 && i.weights[b] >= 2).length }));
-    return { items, level, present, ludus: n ? round(items.reduce((a, i) => a + i.ludus, 0) / n) : null, weak, pairs };
+    const ludusBy = Object.fromEntries(PLAY_TYPES.map(p => [p.id, sum[p.id] ? round(items.reduce((a, i) => a + i.ludus * i.weights[p.id], 0) / sum[p.id]) : null])) as Record<PlayType, number | null>;
+    return { items, level, present, ludus: n ? round(items.reduce((a, i) => a + i.ludus, 0) / n) : null, ludusBy, weak, pairs };
 }
 /**
  * Deterministic suggestions that strengthen one element: materials where it is strong (≥ 2),

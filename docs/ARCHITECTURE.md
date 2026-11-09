@@ -49,9 +49,11 @@ tag or mechanic is missing or malformed.
 They answer different questions and share no position data.
 
 **1. Caillois map (`src/core/caillois.ts`, `PlayMap.tsx`).** Agon, alea, mimicry and ilinx
-are treated as four independent 0-3 intensities, not exclusive classes or opposite poles:
-every card is drawn on all four scales at once, plus a separate paidia ↔ ludus scale
-(`ludus`, `data/editorial/ludus.psv`). A hypothesis averages its materials. The core
+are treated as four independent 0-3 intensities, not exclusive classes or opposite poles.
+The view keeps Caillois' table layout — four element columns, paidia (top) to ludus
+(bottom, `ludus`, `data/editorial/ludus.psv`) — but a card appears in every column where it
+has strength (marker size = intensity) and the selected card is linked across columns;
+column tint follows the board's average intensity, not an exclusive share. A hypothesis averages its materials. The core
 computes per-element board averages, how many cards clearly contain each element, the
 six pairwise co-occurrences (with Caillois' own notes on each pairing), weak elements
 (average < 1) and deterministic suggestions that add an element without requiring it to
