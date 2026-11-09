@@ -164,3 +164,12 @@ test('component 2: two-axis map places cards by hand, edits axes and saves per b
     await page.getByRole('radio', { name: 'ホワイトボード' }).click();
     await expect(page.locator('.react-flow__node')).toHaveCount(7);
 });
+test('Astryx primary button keeps its fill (app resets must not override Astryx layers)', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.react-flow')).toBeVisible();
+    const button = page.getByRole('button', { name: '反応を試す', exact: true });
+    await expect(button).toBeVisible();
+    const background = await button.evaluate(el => getComputedStyle(el).backgroundColor);
+    expect(background).not.toBe('rgba(0, 0, 0, 0)');
+    expect(background).not.toBe('transparent');
+});
