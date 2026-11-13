@@ -18,6 +18,15 @@ svg.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;s
 .drawer-close{display:none;float:right;margin-top:-5px;margin-right:-5px}@media(max-width:1000px){.lab .drawer-close{display:inline-grid}}@media(max-width:700px){.library .drawer-close{display:inline-grid}}
 /* React Flow paints its own pane; let the board's dotted background show in both themes. */
 .react-flow{--xy-background-color:transparent;--xy-background-color-default:transparent}
+/* Japanese copy needs more room and contrast than decorative English labels. */
+:root{font-family:Inter,"Noto Sans CJK JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;--font-family-body:Inter,"Noto Sans CJK JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;--muted:light-dark(#625d6c,#bcb7c5)}
+.library-help,.library-footer,.method-note,.cluster-question,.muted-text,.hint-text,.help-note{font-size:12px;line-height:1.7;color:var(--muted)}
+.library-label strong,.library-label small,.search-box input,.filter-select,.help-facts,.help-facts dt,.example-list li,.inspector-summary{font-size:12px;line-height:1.55}
+.node-description,.node-material.mint .node-description,.node-note .node-description{font-size:12px;line-height:1.7}
+.node-description{color:light-dark(#514b5a,#d1cad9)}
+.node-material.mint .node-description{color:light-dark(#405e4d,#bfd6c8)}
+.node-note .node-description{color:light-dark(#665329,#e0cfa3)}
+.cluster-label,.tab,.btn.small{font-size:12px}
 /* Theme switch */
 .theme-switch{display:flex;align-items:center}.theme-switch svg.icon{width:15px;height:15px}.menu-theme{display:none;gap:4px;border-top:1px solid var(--line);margin-top:4px;padding-top:6px}.menu-theme button{flex:1;justify-content:center;flex-direction:column;gap:3px;font-size:10px;padding:7px 4px}.menu-theme button.active{background:var(--accent-soft);color:var(--accent)}.menu-theme .icon{width:16px;height:16px}
 /* Help popovers */

@@ -20,6 +20,8 @@ Steamタグとゲームメカニクスを、ホワイトボード上でつなぎ
 
 ## すぐ触る
 
+[ブラウザで Game Brainstormer を開く](https://ks250206.github.io/game-brainstormer/)
+
 `portable/game-brainstormer.html` をブラウザで開きます。HTML、CSS、JavaScript、全データを内包し、CDN・API・アカウントは不要です。
 
 ブラウザの制限でファイルからの保存ができないときはJSONを書き出すか、次のように静的配信します。
@@ -229,7 +231,7 @@ pnpm data:build          # checked-in CSV → catalog JSON; Python 3 required
 
 ## 配置・公開
 
-GitHub Pages用の手動実行ワークフロー `.github/workflows/pages.yml` を用意しています。GitHubのSettings → PagesでSourceをGitHub Actionsにしてから、ワークフローを実行します。公開先と最新の検証状態は、このリポジトリのコミット履歴と [検証記録](docs/VERIFICATION.md) を参照してください。
+GitHub Pagesの公開先は [Game Brainstormer](https://ks250206.github.io/game-brainstormer/) です。`.github/workflows/pages.yml` はmainへの更新時と手動実行時にSSGビルドをデプロイします。GitHubのSettings → PagesのSourceにはGitHub Actionsを指定します。最新の検証状態は [検証記録](docs/VERIFICATION.md) を参照してください。
 
 空の `ks250206/game-brainstormer` に投入する補助スクリプトは次のとおりです。ローカルのGit認証・作者設定が必要です。既存のremoteや履歴をforceで上書きしません。
 
